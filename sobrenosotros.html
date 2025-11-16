@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre Nosotros | La Pelota</title>
+    <!-- Tu hoja de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Iconos de Font Awesome (necesarios para los iconos de contacto y el footer) -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Contenedor del Header (El contenido de header.html se inyectará aquí con JS/PHP) -->
+    <!-- Como no tengo tu archivo header.html completo, lo incluyo directamente aquí. -->
+    <!-- En tu entorno real, mantén la carga dinámica si la usas. -->
+ <header class="header">
+            <!-- Parte superior del header -->
+            <div class="header-top">
+                <!-- Logo nos regresa a la general pero ps estas en ella-->
+                <a href="index.html" class="logo-header" title="Inicio">
+                    <img src="img/LogoPelota2.png" alt="Logo">
+                    <h1>La Pelota</h1>
+                </a>
+                <!-- Barra de Busqueda -->
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar...">
+                </div>
+                <nav class="nav-top">
+                    <ul>
+                         <!-- Boton Configuracion -->
+                       
+                        <li>
+                        <button id="btnConfiguracion" class="button1" aria-label="Abrir Configuración de la cuenta" aria-expanded="false" title="Configuración">
+                            <svg class="svg-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M19.14,12.94a1.43,1.43,0,0,0,0-.94l2.11-1.65a.35.35,0,0,0,.08-.45l-2-3.46a.35.35,0,0,0-.43-.15l-2.49,1a5.13,5.13,0,0,0-1.63-.94L14.5,2.5a.35.35,0,0,0-.34-.27H9.84a.35.35,0,0,0-.34.27L9.14,6.35a5.13,5.13,0,0,0-1.63.94l-2.49-1a.35.35,0,0,0-.43.15l-2,3.46a.35.35,0,0,0,.08.45L4.78,12a1.43,1.43,0,0,0,0,.94l-2.11,1.65a.35.35,0,0,0-.08.45l2,3.46a.35.35,0,0,0,.43.15l2.49-1a5.13,5.13,0,0,0,1.63.94l.36,3.85a.35.35,0,0,0,.34.27h4.32a.35.35,0,0,0,.34-.27l.36-3.85a5.13,5.13,0,0,0,1.63-.94l2.49,1a.35.35,0,0,0,.43-.15l2-3.46a.35.35,0,0,0-.08-.45ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                            />
+                            </svg>
+                        </button>
+                        </li>
+
+                        <!-- Modal de Configuración -->
+                        <div id="modalConfiguracion" class="modal">
+                        <div class="modal-content config">
+                            <span class="cerrar">&times;</span>
+                            <h2>⚙️ Configuración</h2>
+
+                            <div class="perfil">
+                            <img src="img/FotoPerfilOdiseo.jpg" alt="Foto de perfil" class="perfil-img" />
+                            <p><strong>Nombre de usuario:</strong> @Odysseus</p>
+                            <p><strong>Descripción:</strong> ******</p>
+                            </div>
+
+                            <div class="config-opciones">
+                            <div class="opcion">
+                                <label>Modo claro:</label>
+                                <label class="switch">
+                                <input type="checkbox" id="modo-claro">
+                                <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="opcion">
+                                <label>Lector de pantalla:</label>
+                                <label class="switch">
+                                <input type="checkbox" id="lector-pantalla">
+                                <span class="slider"></span>
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- ------------------------------------------------------------ -->
+                        <!-- Botón de notificaciones -->
+                       <li>
+                        <button id="btnNotificaciones" class="button" aria-label="Abrir Notificaciones" aria-expanded="false" title="Notificaciones">
+                            <svg class="bell" viewBox="0 0 448 512">
+                            <path
+                                d="M224 512c35.3 0 63.1-28.7 63.1-64H160.9c0 35.3 27.8 64 63.1 64zM439.4 362.3c-19.9-20.8-55.4-52.1-55.4-154.3
+                                0-77.7-54.5-139.7-127.1-155.2V32c0-17.7-14.3-32-31.9-32s-31.9 14.3-31.9 32v20.8C120.5 68.3 66 130.3 66 208
+                                c0 102.2-35.5 133.5-55.4 154.3-6 6.3-8.7 14.1-8.6 21.7 .1 12.3 9.6 24 24.3 24H423.7c14.7 0 24.2-11.7 24.3-24
+                                .1-7.6-2.6-15.4-8.6-21.7z"
+                            />
+                            </svg>
+                        </button>
+                        </li>
+
+                        <!--  Modal de Notificaciones -->
+                        <div id="modalNotificaciones" class="modal">
+                        <div class="modal-content">
+                            <span class="cerrar">&times;</span>
+                            <h2>🔔 Notificaciones</h2>
+                            <p>No tienes notificaciones nuevas.</p>
+                        </div>
+                        </div>                       
+                         <!-- ------------------------------------------------------------ -->
+                        <li><a href="/registrarse.html">Registrate</a></li>
+                        <li><a href="/iniciarsesion.html">Iniciar Sesión</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Parte inferior del header -->
+            <div class="header-bottom">
+                
+                <nav class="nav-bottom">
+
+                    <ul>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="equipos.html">Equipos</a></li>
+                        <li><a href="partidos.html">Partidos</a></li>
+                        <li><a href="envivos.html">En Vivo</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+
+
+    <!-- Contenido principal de la página Sobre Nosotros -->
+    <main class="contenedor-sobre-nosotros">
+        
+        <section class="info-contacto-galeria">
+            
+            <!-- Columna de Texto e Información de Contacto -->
+            <div class="info-section">
+                
+                <!-- SOBRE NOSOTROS -->
+                <div class="acerca-de">
+                    <h2>SOBRE NOSOTROS</h2>
+                    <h3 class="subtitulo-blanco">¡Conoce nuestra historia y a nuestro equipo!</h3>
+                    <p>"La Pelota" tiene sus origenes en Agosto del 2025 como un proyecto escolar entre Andrea K. Lopez y Adrián E. Cortez, 
+                        y después de mucho esfuerzo y dedicación, se logró desarrollar una página web para fanaticos del futbol que ansían la 
+                        siguiente Copa del Mundo.
+                    </p>
+                    <p>Nuestro equipo está conformado por expertos que día con día están al tanto de las noticias y novedades más recientes sobre 
+                        el mundial para entregarte a ti el mejor contenido posible, de confianza y siempre entretenido.
+                    </p>
+                </div>
+
+                <!-- CONTÁCTANOS -->
+                <div class="contactanos">
+                    <h2>CONTÁCTANOS</h2>
+                    <h3 class="subtitulo-blanco">Para contacto y dudas puedes hacerlo en nuestros correos y teléfonos oficiales:</h3>
+                    <div class="contacto-items">
+                        <!-- Iconos de Correo y Teléfono -->
+                        <p><i class="fa-regular fa-envelope"></i> lapelota@gmail.com</p>
+                        <p><i class="fa-regular fa-envelope"></i> lapelota2@gmail.com</p>
+                        <p><i class="fa-solid fa-phone"></i> +52-811-123-4567</p>
+                        <p><i class="fa-solid fa-phone"></i> +52-812-765-4321</p>
+                    </div>
+                </div>
+
+                <!-- GALERÍA (Título para la columna izquierda) -->
+                <div class="galeria-titulo-mobile">
+                    <h2>GALERÍA</h2>
+                </div>
+
+            </div>
+            
+            <!-- Columna Derecha de la Galería (Imágenes) -->
+            <div class="galeria-section">
+                <!-- Fila 3 y 4: Galería de 4 imágenes -->
+                <div class="galeria-grid dos-columnas">
+                    <img src="img/equipo-trabajando.jpg" alt="Equipo Principal de La Pelota">
+                    <img src="img/equipo-mundial.jpg" alt="Equipo en el Mundial">
+                </div>
+
+                <!-- Fila 5 y 6: Galería de 4 imágenes -->
+                <div class="galeria-grid dos-columnas">
+                    <img src="img/equipo-entrevista.jpg" alt="Equipo entrevistando">
+                    <img src="img/equipo-gala.jpg" alt="Equipo trabajando">
+                </div>
+                
+                <!-- Fila 7 y 8: Galería de 4 imágenes -->
+                <div class="galeria-grid dos-columnas">
+                    <img src="img/equipo-choque.jpg" alt="Equipo chocando los cinco">
+                    <img src="img/oficina.jpg" alt="Vista de la oficina">
+                </div>
+                
+                <!-- Fila 1 y 2: Galería de 4 imágenes -->
+                <div class="galeria-grid dos-columnas">
+                    <img src="img/mithras.jpg" alt="Nuestro querido fundador cornudo: ¡MITHRAS!">
+                    <img src="img/robert.jpg" alt="Nuestro querido fundador orejón (y dientón): ¡ROBERT!">
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Placeholder para el Footer (Tu JS se encargará de cargarlo) -->
+    <div id="footer-placeholder">
+        <!-- Contenido del footer.html se inyecta aquí -->
+    </div>
+    
+    <!-- Tu archivo de scripts (app.js) -->
+    <script src="app.js"></script>
+    <div id="modal-publicacion-placeholder"></div>
+        <a href="faq.html" class="btn-faq-flotante" aria-label="Ayuda / FAQ" title="Preguntas Frecuentes">
+            ?
+        </a>
+
+</body>
+</html>

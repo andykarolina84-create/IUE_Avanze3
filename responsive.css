@@ -1,0 +1,458 @@
+/* =====================================================
+   AJUSTE FINO VISUAL (HEADER + SLIDER)
+   ===================================================== */
+@media (max-width: 450px) {
+  /* --- HEADER --- */
+  .header-top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .nav-top ul {
+    margin-top: 0.2rem;
+  }
+
+  .nav-top a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  /* Menú inferior */
+  .header-bottom {
+    border-top: 2px solid var(--color-accent);
+    margin-top: 0.4rem;
+  }
+
+  /* --- SLIDER PRINCIPAL --- */
+  .slider {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .slider .item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 0.6rem;
+  }
+
+  .slider button {
+    top: 45%;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
+  }
+
+  #prev {
+    left: 5%;
+  }
+
+  #next {
+    right: 5%;
+  }
+
+  /* --- TÍTULOS SECCIONES --- */
+  #titulo-principal, h2, h3 {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    text-align: center;
+  }
+
+  /* --- ESPACIADO GLOBAL --- */
+  main, section {
+    padding: 0 0.6rem;
+  }
+}
+
+
+
+/* ==============================
+   Laptops medianas y grandes
+   ============================== */
+@media (max-width: 1024px) {
+  .search-box input {
+    width: 300px;
+  }
+
+  .header-bottom {
+    padding: 0.5rem 3rem;
+  }
+}
+
+/* ==============================
+   Tablets medianas
+   ============================== */
+@media (max-width: 950px) {
+  .noticias-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .noticia-item img {
+    height: 160px;
+  }
+}
+
+/* ==============================
+   Tablets pequeñas
+   ============================== */
+@media (max-width: 900px) {
+  .noticias-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* =====================================================
+   ESTRUCTURA GENERAL (Header, Búsqueda, Footer)
+   ===================================================== */
+@media (max-width: 768px) {
+  /* --- HEADER GENERAL --- */
+  header,
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-header-bg);
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    height: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid var(--color-accent);
+  }
+
+  /* --- FILA 1: Logo + Iconos --- */
+  .header-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.6rem;
+  }
+
+  .logo-header img {
+    width: 40px;
+    height: auto;
+  }
+
+  .logo-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .nav-top ul {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-right: 0.6rem;
+  }
+
+  .nav-top .button,
+  .nav-top .button1 {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* --- FILA 2: Barra de búsqueda --- */
+  .search-box {
+    width: 90%;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* --- FILA 3: Botones morados --- */
+  .nav-top a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.6rem;
+    display: inline-block;
+    margin: 0 0.2rem;
+  }
+
+  .nav-top .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+
+  /* --- MENÚ INFERIOR (azul) --- */
+  .header-bottom {
+    width: 100%;
+    background-color: #00e6ff;
+    padding: 0.5rem 0;
+  }
+
+  .header-bottom .nav-bottom ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 0.3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-bottom .nav-bottom a {
+    color: #000;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+  }
+
+  /* --- TÍTULOS SECCIONES --- */
+  #titulo-principal,
+  h2,
+  h3 {
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    text-align: center;
+  }
+
+  /* --- ESPACIADO GLOBAL --- */
+  main,
+  section {
+    padding: 0 0.6rem;
+  }
+}
+
+/* =====================================================
+   SLIDER PRINCIPAL RESPONSIVE
+   ===================================================== */
+@media (max-width: 768px) {
+  .slider {
+    width: 90%;
+    max-width: 380px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 0.8rem;
+    margin: 0 auto 1rem auto;
+    position: relative;
+  }
+
+  .slider .item {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+  }
+
+  .slider .item h1 {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background: rgba(0, 0, 0, 0.5);
+    font-size: clamp(1rem, 4vw, 1.3rem);
+    padding: 0.3rem 0.7rem;
+    border-radius: 0.4rem;
+  }
+
+  .slider button {
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.4);
+    border: none;
+    border-radius: 50%;
+    color: white;
+    padding: 0.3rem 0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  #prev {
+    left: 5px;
+  }
+  #next {
+    right: 5px;
+  }
+}
+
+/* =====================================================
+   CARRUSELES SECUNDARIOS
+   ===================================================== */
+@media (max-width: 450px) {
+  .carousel-container {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+  }
+
+  .carousel-track {
+    display: flex;
+    gap: 0.6rem;
+  }
+
+  .carousel-track .card {
+    flex: 0 0 75%;
+    max-width: 75%;
+  }
+
+  .carousel-track img,
+  .carousel-track video {
+    border-radius: 0.6rem;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  .carousel-btn {
+    display: none;
+  }
+}
+
+/* =====================================================
+   BARRAS DE BÚSQUEDA SECUNDARIAS
+   ===================================================== */
+@media (max-width: 450px) {
+  .search-bar-secondary {
+    width: 90%;
+    margin: 0.5rem auto;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+  }
+
+  .search-bar-secondary input {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+/* =====================================================
+   FOOTER RESPONSIVE
+   ===================================================== */
+@media (max-width: 450px) {
+  footer,
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 0.5rem;
+  }
+
+  footer p,
+  .footer p {
+    font-size: 0.8rem;
+  }
+}
+
+/* =====================================================
+TRANSICIÓN SUAVE
+   ===================================================== */
+header,
+.header,
+.search-box,
+.nav-top ul,
+.header-bottom {
+  transition: all 0.3s ease-in-out;
+}
+
+
+/* =====================================================
+   SLIDER PRINCIPAL - OPTIMIZACIÓN VISUAL MOVIL
+   ===================================================== */
+@media (max-width: 768px) {
+  .slider {
+    width: 90%;
+    max-width: 360px;
+    aspect-ratio: 5 / 6; /* más cuadrado, mejor para móvil */
+    margin: 1rem auto 2rem auto;
+    border-radius: 0.8rem;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+
+  .slider .item {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .slider .item.active {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .slider .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0.8rem;
+  }
+
+  /* Texto del slider */
+  .slider .item h1 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: clamp(0.9rem, 3.8vw, 1.1rem);
+    padding: 0.6rem 0;
+    border-bottom-left-radius: 0.8rem;
+    border-bottom-right-radius: 0.8rem;
+  }
+
+  /* 🔹 Botones más discretos y centrados verticalmente */
+  .slider button {
+    font-size: 1.2rem;
+    padding: 0.3rem 0.5rem;
+    background: rgba(0, 0, 0, 0.3);
+    border: none;
+    color: white;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 0.3s ease;
+  }
+
+  .slider button:hover {
+    background: rgba(0, 0, 0, 0.6);
+  }
+
+  #prev {
+    left: 6px;
+  }
+
+  #next {
+    right: 6px;
+  }
+}

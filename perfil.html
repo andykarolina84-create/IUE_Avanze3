@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil de Usuario</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+        <header class="header">
+            <!-- Parte superior del header -->
+            <div class="header-top">
+                <!-- Logo nos regresa a la general pero ps estas en ella-->
+                <a href="index.html" class="logo-header" title="Inicio">
+                    <img src="img/LogoPelota2.png" alt="Logo">
+                    <h1>La Pelota</h1>
+                </a>
+                <!-- Barra de Busqueda -->
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar...">
+                </div>
+                <nav class="nav-top">
+                    <ul>
+                         <!-- Boton Configuracion -->
+                       
+                        <li>
+                        <button id="btnConfiguracion" class="button1" aria-label="Abrir Configuración de la cuenta" aria-expanded="false" title="Configuración">
+                            <svg class="svg-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M19.14,12.94a1.43,1.43,0,0,0,0-.94l2.11-1.65a.35.35,0,0,0,.08-.45l-2-3.46a.35.35,0,0,0-.43-.15l-2.49,1a5.13,5.13,0,0,0-1.63-.94L14.5,2.5a.35.35,0,0,0-.34-.27H9.84a.35.35,0,0,0-.34.27L9.14,6.35a5.13,5.13,0,0,0-1.63.94l-2.49-1a.35.35,0,0,0-.43.15l-2,3.46a.35.35,0,0,0,.08.45L4.78,12a1.43,1.43,0,0,0,0,.94l-2.11,1.65a.35.35,0,0,0-.08.45l2,3.46a.35.35,0,0,0,.43.15l2.49-1a5.13,5.13,0,0,0,1.63.94l.36,3.85a.35.35,0,0,0,.34.27h4.32a.35.35,0,0,0,.34-.27l.36-3.85a5.13,5.13,0,0,0,1.63-.94l2.49,1a.35.35,0,0,0,.43-.15l2-3.46a.35.35,0,0,0-.08-.45ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                            />
+                            </svg>
+                        </button>
+                        </li>
+
+                        <!-- Modal de Configuración -->
+                        <div id="modalConfiguracion" class="modal">
+                        <div class="modal-content config">
+                            <span class="cerrar">&times;</span>
+                            <h2>⚙️ Configuración</h2>
+
+                            <div class="perfil">
+                            <img src="img/FotoPerfilOdiseo.jpg" alt="Foto de perfil" class="perfil-img" />
+                            <p><strong>Nombre de usuario:</strong> @Odysseus</p>
+                            <p><strong>Descripción:</strong> ******</p>
+                            </div>
+
+                            <div class="config-opciones">
+                            <div class="opcion">
+                                <label>Modo claro:</label>
+                                <label class="switch">
+                                <input type="checkbox" id="modo-claro">
+                                <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="opcion">
+                                <label>Lector de pantalla:</label>
+                                <label class="switch">
+                                <input type="checkbox" id="lector-pantalla">
+                                <span class="slider"></span>
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- ------------------------------------------------------------ -->
+                        <!-- Botón de notificaciones -->
+                       <li>
+                        <button id="btnNotificaciones" class="button" aria-label="Abrir Notificaciones" aria-expanded="false" title="Notificaciones">
+                            <svg class="bell" viewBox="0 0 448 512">
+                            <path
+                                d="M224 512c35.3 0 63.1-28.7 63.1-64H160.9c0 35.3 27.8 64 63.1 64zM439.4 362.3c-19.9-20.8-55.4-52.1-55.4-154.3
+                                0-77.7-54.5-139.7-127.1-155.2V32c0-17.7-14.3-32-31.9-32s-31.9 14.3-31.9 32v20.8C120.5 68.3 66 130.3 66 208
+                                c0 102.2-35.5 133.5-55.4 154.3-6 6.3-8.7 14.1-8.6 21.7 .1 12.3 9.6 24 24.3 24H423.7c14.7 0 24.2-11.7 24.3-24
+                                .1-7.6-2.6-15.4-8.6-21.7z"
+                            />
+                            </svg>
+                        </button>
+                        </li>
+
+                        <!--  Modal de Notificaciones -->
+                        <div id="modalNotificaciones" class="modal">
+                        <div class="modal-content">
+                            <span class="cerrar">&times;</span>
+                            <h2>🔔 Notificaciones</h2>
+                            <p>No tienes notificaciones nuevas.</p>
+                        </div>
+                        </div>                       
+                         <!-- ------------------------------------------------------------ -->
+                        <li><a href="registrarse.html">Registrate</a></li>
+                        <li><a href="iniciarsesion.html">Iniciar Sesión</a></li>
+
+                        
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Parte inferior del header -->
+            <div class="header-bottom">
+                
+                <nav class="nav-bottom">
+
+                    <ul>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="equipos.html">Equipos</a></li>
+                        <li><a href="partidos.html">Partidos</a></li>
+                        <li><a href="envivos.html">En Vivo</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+
+    <main class="contenedor-perfil">
+<section class="perfil-usuario">
+    <div class="perfil-info">
+        
+        <div class="perfil-foto-container">
+            <img src="img/fotoperfilrobert.jpg" alt="Foto de perfil" class="perfil-foto">
+            
+            <label for="input-editar-foto" class="perfil-editar-overlay">
+                <i class="fa-solid fa-pen-fancy"></i>
+                <span>Editar foto de perfil</span>
+            </label>
+            
+            <input type="file" id="input-editar-foto" style="display: none;" accept="image/*">
+        </div>
+        <div class="perfil-detalles">
+            <h2 class="perfil-nombre">@RobertCottontail1880</h2>
+            <div class="perfil-stats">
+                <div><strong>Publicaciones</strong><p>5</p></div>
+                <div><strong>Seguidores</strong><p>8</p></div>
+                <div><strong>Seguidos</strong><p>203</p></div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-publicar">
+        <i class="fa-solid fa-plus"></i> Añadir Publicación
+    </button>
+</section>
+
+        <section id="carrusel-vertical" class="carousel-section publicaciones">
+            <h3>Publicaciones</h3>
+            <button class="carousel-btn prev">&#9650;</button>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <div class="publicacion-card">
+                        <div class="publi-imagen">
+                            <img src="img/messi-copa.jpeg" alt="Publicación">
+                            <div class="publi-meta">
+                                <span>⏱ 5 min.</span>
+                                <span>@RobertCottontail1880</span>
+                            </div>
+                        </div>
+
+                        <div class="publi-contenido">
+                            <h4>¡El verdadera GOAT!</h4>
+                            
+                            <div class="comentario">
+                                <img src="img/FotoPerfilOdiseo.jpg" class="avatar" alt="Usuario">
+                                <div>
+                                    <span class="usuario">@Odyseo01586</span>
+                                    <p>A mi esposa le encanta el fútbol, aunque lo toma un poquito en serio 😂</p>
+                                </div>
+                            </div>
+
+                            <div class="comentario">
+                                <img src="img/fotoperfilrobert.jpg" class="avatar" alt="Usuario Robert">
+                                <div>
+                                    <span class="usuario">@RobertCottontail1880</span>
+                                    <p>Esta foto capta la emoción. ¡Grande el GOAT!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publicacion-card">
+                        <div class="publi-imagen">
+                            <img src="img/messi-copa.jpeg" alt="Publicación">
+                            <div class="publi-meta">
+                                <span>⏱ 5 min.</span>
+                                <span>@RobertCottontail1880</span>
+                            </div>
+                        </div>
+
+                        <div class="publi-contenido">
+                            <h4>¡El verdadero GOAT!</h4>
+                            
+                            <div class="comentario">
+                                <img src="img/FotoPerfilOdiseo.jpg" class="avatar" alt="Usuario">
+                                <div>
+                                    <span class="usuario">@Odyseo01586</span>
+                                    <p>A mi esposa le encanta el fútbol, aunque lo toma un poquito en serio 😂</p>
+                                </div>
+                            </div>
+
+                            <div class="comentario">
+                                <img src="img/fotoperfilrobert.jpg" class="avatar" alt="Usuario Robert">
+                                <div>
+                                    <span class="usuario">@RobertCottontail1880</span>
+                                    <p>Esta foto capta la emoción. ¡Grande el GOAT!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publicacion-card">
+                        <div class="publi-imagen">
+                            <img src="img/messi-copa.jpeg" alt="Publicación">
+                            <div class="publi-meta">
+                                <span>⏱ 5 min.</span>
+                                <span>@RobertCottontail1880</span>
+                            </div>
+                        </div>
+
+                        <div class="publi-contenido">
+                            <h4>¡El verdadero GOAT!</h4>
+                            
+                            <div class="comentario">
+                                <img src="img/FotoPerfilOdiseo.jpg" class="avatar" alt="Usuario">
+                                <div>
+                                    <span class="usuario">@Odyseo01586</span>
+                                    <p>A mi esposa le encanta el fútbol, aunque lo toma un poquito en serio 😂</p>
+                                </div>
+                            </div>
+
+                            <div class="comentario">
+                                <img src="img/fotoperfilrobert.jpg" class="avatar" alt="Usuario Robert">
+                                <div>
+                                    <span class="usuario">@RobertCottontail1880</span>
+                                    <p>Esta foto capta la emoción. ¡Grande el GOAT!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="publicacion-card">
+                        <div class="publi-imagen">
+                            <img src="img/messi-copa.jpeg" alt="Publicación">
+                            <div class="publi-meta">
+                                <span>⏱ 5 min.</span>
+                                <span>@RobertCottontail1880</span>
+                            </div>
+                        </div>
+
+                        <div class="publi-contenido">
+                            <h4>¡El verdadero GOAT!</h4>
+                            
+                            <div class="comentario">
+                                <img src="img/FotoPerfilOdiseo.jpg" class="avatar" alt="Usuario">
+                                <div>
+                                    <span class="usuario">@Odyseo01586</span>
+                                    <p>A mi esposa le encanta el fútbol, aunque lo toma un poquito en serio 😂</p>
+                                </div>
+                            </div>
+
+                            <div class="comentario">
+                                <img src="img/fotoperfilrobert.jpg" class="avatar" alt="Usuario Robert">
+                                <div>
+                                    <span class="usuario">@RobertCottontail1880</span>
+                                    <p>Esta foto capta la emoción. ¡Grande el GOAT!</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn next">&#9660;</button>
+        </section>
+
+    </main>
+    <div id="footer-placeholder"></div>
+
+<div id="modalPublicacionGrande" class="modal modal-publi-grande">
+    <div class="modal-content-publi">
+        <span class="cerrar-publi">&times;</span> 
+        
+        <h4 class="publi-title">¡El verdadero GOAT!</h4>
+        
+        <div class="publicacion-completa">
+            <div class="publi-imagen-completa">
+                <img src="img/messi-copa.jpeg" alt="Publicación Grande" id="publiModalImagen">
+            </div>
+            <div class="publi-contenido-completo">
+                <div class="publi-header-completo">
+                    <img src="img/FotoPerfilOdiseo.jpg" alt="Avatar Usuario" class="avatar-publi" id="publiModalAvatar">
+                    <div class="info-usuario">
+                        <span class="usuario" id="publiModalUsuario">@Odiseo01586</span>
+                        <p id="publiModalTexto">A mi esposa le encanta el fútbol, aunque lo toma un poquito en serio 😂</p>
+                    </div>
+                    <i class="fa-solid fa-comment icono-chat"></i>
+                </div>
+                
+                <div class="separador"></div>
+
+                <div class="comentario-secundario">
+                    <img src="img/fotoperfilrobert.jpg" alt="Avatar Usuario" class="avatar-publi" id="publiModalAvatar">
+                    <div class="info-usuario">
+                        <span class="usuario">@RobertCottontail1880</span>
+                        <p>Esta foto capta la emoción. ¡Grande el GOAT!</p>
+                    </div>
+                    <div class="acciones-publi">
+                        <i class="fa-solid fa-heart"></i>
+                        <i class="fa-solid fa-bookmark"></i>
+                        <i class="fa-solid fa-flag"></i>
+                    </div>
+                </div>
+
+                <div class="caja-comentario">
+                    <input type="text" placeholder="Comentar....">
+                    <button class="btn-enviar">Enviar</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modalNuevaPublicacion" class="modal modal-nueva-publi">
+    <div class="modal-content-nueva-publi">
+        
+        <span class="cerrar-publi-nueva">&times;</span> 
+
+        <div class="publi-grid-container">
+            <div class="publi-form-columna">
+                <div class="publi-header-form">
+                    <img src="img/fotoperfilrobert.jpg" alt="Foto de perfil de Robert" class="avatar-publi-form">
+                    <div class="info-publi-form">
+                        <p class="publi-form-label">Username</p>
+                        <span class="publi-form-username">@RobertCottontail1880</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="publiTitulo" class="publi-form-label">Título de Publicacion</label>
+                    <input type="text" id="publiTitulo" placeholder="Título">
+                </div>
+
+                <div class="form-group">
+                    <label for="publiDescripcion" class="publi-form-label">Añade una Descripcion</label>
+                    <textarea id="publiDescripcion" placeholder="Descripción..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="publiCategoria" class="publi-form-label">Añadir Categoría</label>
+                    <input type="text" id="publiCategoria" placeholder="Categoría">
+                </div>
+
+                <div class="form-group">
+                    <label for="publiColaboradores" class="publi-form-label">Añadir Colaboradores</label>
+                    <input type="text" id="publiColaboradores" placeholder="Colaboradores">
+                </div>
+                
+                <div class="publi-share-section">
+                    <p class="publi-form-label">Compartir en</p>
+                    <div class="social-icons-publi">
+                        <img src="img/icono-x.png" alt="X Icono">
+                        <img src="img/icono-facebook.png" alt="Facebook Icono">
+                        <img src="img/icono-instagram.png" alt="Instagram Icono">
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="publi-upload-columna">
+                <label for="file-upload" class="btn-upload-file">
+                    Selecciona del Ordenador
+                </label>
+                <input type="file" id="file-upload" style="display: none;" accept="image/*,video/*">
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    <script src="app.js"></script>
+    <div id="modal-publicacion-placeholder"></div>
+        <a href="faq.html" class="btn-faq-flotante" aria-label="Ayuda / FAQ" title="Preguntas Frecuentes">
+            ?
+        </a>
+
+</body>
+</html>

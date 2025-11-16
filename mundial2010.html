@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mundial 2010 | La Pelota</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+    <body style="background: url('/img/fondopantallasudafrica4.jpg') center/cover no-repeat fixed;">
+        <header class="header">
+            <!-- Parte superior del header -->
+            <div class="header-top">
+                <!-- nos regresa a index.html o la principal-->
+                <a href="index.html" class="logo-header" title="Inicio">
+                    <img src="img/LogoPelota2.png" alt="Logo">
+                    <h1>La Pelota</h1>
+                </a>
+                <!-- Barra de Busqueda -->
+                <div class="search-box">
+                    <input type="text" placeholder="Buscar...">
+                </div>
+                <nav class="nav-top">
+                    <ul>
+                         <!-- Boton Configuracion -->
+                        <li>
+                        <button id="btnConfiguracion" class="button1" aria-label="Abrir Configuración de la cuenta" aria-expanded="false" title="Configuración">
+                            <svg class="svg-icon" viewBox="0 0 24 24">
+                            <path
+                                d="M19.14,12.94a1.43,1.43,0,0,0,0-.94l2.11-1.65a.35.35,0,0,0,.08-.45l-2-3.46a.35.35,0,0,0-.43-.15l-2.49,1a5.13,5.13,0,0,0-1.63-.94L14.5,2.5a.35.35,0,0,0-.34-.27H9.84a.35.35,0,0,0-.34.27L9.14,6.35a5.13,5.13,0,0,0-1.63.94l-2.49-1a.35.35,0,0,0-.43.15l-2,3.46a.35.35,0,0,0,.08.45L4.78,12a1.43,1.43,0,0,0,0,.94l-2.11,1.65a.35.35,0,0,0-.08.45l2,3.46a.35.35,0,0,0,.43.15l2.49-1a5.13,5.13,0,0,0,1.63.94l.36,3.85a.35.35,0,0,0,.34.27h4.32a.35.35,0,0,0,.34-.27l.36-3.85a5.13,5.13,0,0,0,1.63-.94l2.49,1a.35.35,0,0,0,.43-.15l2-3.46a.35.35,0,0,0-.08-.45ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"
+                            />
+                            </svg>
+                        </button>
+                        </li>
+
+                        <!-- Modal de Configuración -->
+                        <div id="modalConfiguracion" class="modal">
+                        <div class="modal-content config">
+                            <span class="cerrar">&times;</span>
+                            <h2>⚙️ Configuración</h2>
+
+                            <div class="perfil">
+                            <img src="img/FotoPerfilOdiseo.jpg" alt="Foto de perfil" class="perfil-img" />
+                            <p><strong>Nombre de usuario:</strong> @Odysseus</p>
+                            <p><strong>Descripción:</strong> ******</p>
+                            </div>
+
+                            <div class="config-opciones">
+                            <div class="opcion">
+                                <label>Modo claro:</label>
+                                <label class="switch">
+                                <input type="checkbox" id="modo-claro">
+                                <span class="slider"></span>
+                                </label>
+                            </div>
+
+                            <div class="opcion">
+                                <label>Lector de pantalla:</label>
+                                <label class="switch">
+                                <input type="checkbox" id="lector-pantalla">
+                                <span class="slider"></span>
+                                </label>
+                            </div>
+                            </div>
+                        </div>
+                        </div>
+
+                        <!-- ------------------------------------------------------------ -->
+                        <!-- Botón de notificaciones -->
+                       <li>
+                        <button id="btnNotificaciones" class="button" aria-label="Abrir Notificaciones" aria-expanded="false" title="Notificaciones">
+                            <svg class="bell" viewBox="0 0 448 512">
+                            <path
+                                d="M224 512c35.3 0 63.1-28.7 63.1-64H160.9c0 35.3 27.8 64 63.1 64zM439.4 362.3c-19.9-20.8-55.4-52.1-55.4-154.3
+                                0-77.7-54.5-139.7-127.1-155.2V32c0-17.7-14.3-32-31.9-32s-31.9 14.3-31.9 32v20.8C120.5 68.3 66 130.3 66 208
+                                c0 102.2-35.5 133.5-55.4 154.3-6 6.3-8.7 14.1-8.6 21.7 .1 12.3 9.6 24 24.3 24H423.7c14.7 0 24.2-11.7 24.3-24
+                                .1-7.6-2.6-15.4-8.6-21.7z"
+                            />
+                            </svg>
+                        </button>
+                        </li>
+
+                        <!-- Modal de Notificaciones -->
+                        <div id="modalNotificaciones" class="modal">
+                        <div class="modal-content">
+                            <span class="cerrar">&times;</span>
+                            <h2>🔔 Notificaciones</h2>
+                            <p>No tienes notificaciones nuevas.</p>
+                        </div>
+                        </div>                       
+                         <!-- ------------------------------------------------------------ -->
+                        <li><a href="/registrarse.html">Registrate</a></li>
+                        <li><a href="/iniciarsesion.html">Iniciar Sesión</a></li>
+                        
+                    </ul>
+                </nav>
+            </div>
+
+            <!-- Parte inferior del header -->
+            <div class="header-bottom">
+                
+                <nav class="nav-bottom">
+
+                    <ul>
+                        <li><a href="noticias.html">Noticias</a></li>
+                        <li><a href="equipos.html">Equipos</a></li>
+                        <li><a href="partidos.html">Partidos</a></li>
+                        <li><a href="envivos.html">En Vivo</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+        </header>
+
+        <h1 id="titulo-principal">Sudafrica 2010 </h1>
+  <!-- =====================================================
+       INFORMACIÓN PRINCIPAL DEL MUNDIAL
+  ===================================================== -->
+  <section class="noticias-header" style="margin-top: 3rem;">
+    <div class="noticias-titulo">
+
+      <h3 class="equipos-subtitulo">El primero celebrado en el continente africano</h3>
+      <p style="max-width: 700px;">
+        La Copa Mundial de la FIFA Sudáfrica 2010, fue la decimonovena edición de la Copa Mundial de Fútbol.
+         La competición se celebró en Sudáfrica, entre el 11 de junio y el 11 de julio de ese año. 
+         Fue la primera vez que el torneo se disputaba en África y la quinta que lo hacía en el hemisferio sur.
+          El país anfitrión superó en la elección previa a Egipto y Marruecos.
+      </p>
+    </div>
+
+    <div class="search-bar-secondary">
+      <label for="buscarMundial">Buscar:</label>
+      <input id="buscarMundial" type="text" placeholder="Momentos, equipos, goles...">
+    </div>
+  </section>
+
+  <!-- =====================================================
+       SECCIÓN DE NOTICIAS (usa tus tarjetas .noticia-item)
+  ===================================================== -->
+
+  
+  <section class="noticias-container">
+    <div class="noticias-layout">
+      <!-- Lista lateral de notas -->
+      <div class="noticias-lista">
+        <article class="noticia-item">
+          <img src="img/messi-copa.jpeg" alt="Messi campeón">
+          <h3>¡Iniesta le da la gloria a España!</h3>
+          <p>El histórico gol en la prórroga ante Países Bajos coronó a la Roja como campeona del mundo por primera vez.</p>
+        </article>
+
+        <article class="noticia-item">
+          <img src="img/marruecos_semifinal.jpeg" alt="Marruecos semifinal">
+          <h3>El Pulpo Paul, el adivino del Mundia</h3>
+          <p>El simpático molusco alemán se volvió una sensación al acertar todos los resultados importantes del torneo.</p>
+        </article>
+
+        <article class="noticia-item">
+          <img src="img/final_argentina_francia.jpg" alt="Final Argentina Francia">
+          <h3>“Waka Waka” hace bailar al planeta</h3>
+          <p>La canción oficial interpretada por Shakira se convirtió en himno y símbolo del espíritu africano del Mundial.</p>
+        </article>
+      </div>
+
+        <!-- Noticia principal -->
+        <div class="noticia-principal">
+            <h2>España conquista el mundo por primera vez</h2>
+            <p class="intro">La Roja alcanzó la gloria en Sudáfrica 2010 con un fútbol inolvidable.</p>
+            <img src="img/argentina_celebracion.jpeg" alt="Celebración Argentina" class="img-noticia">
+            <div class="noticia-contenido">
+            <p>
+                Después de décadas de quedarse a las puertas, la selección española logró su primer título mundial
+                tras vencer a los Países Bajos en una final histórica. Andrés Iniesta se convirtió en héroe nacional
+                con un gol en la prórroga que hizo estallar de alegría a todo un país.
+            </p>
+            <p>
+                 El equipo de Vicente del Bosque deslumbró con su estilo de toque y posesión —el famoso “tiki-taka”—,
+                guiado por figuras como Xavi, Casillas, Villa e Iniesta. Su triunfo marcó el punto más alto de una
+                generación dorada que cambió para siempre la historia del fútbol español.
+            </p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+    <!-- =====================================================
+        EQUIPOS PARTICIPANTES
+    ===================================================== -->
+    <section class="carousel-section equipos">
+        <h3>Equipos Participantes</h3>
+        <div class="carousel-container">
+        <div class="carousel-track">
+            <div class="equipo-card" data-url="equipo-detalles.html">
+            <img src="img/España.png" alt="Argentina">
+            <h4>España</h4>
+            <p>Campeón</p>
+            </div>
+
+            <div class="equipo-card" data-url="equipo-detalles.html">
+            <img src="img/paises_bajos.png" alt="Francia">
+            <h4>Paises Bajos</h4>
+            <p>Subcampeón</p>
+            </div>
+
+            <div class="equipo-card" data-url="equipo-detalles.html">
+            <img src="img/Alemania.png" alt="Marruecos">
+            <h4>Alemania</h4>
+            <p>Semifinalista</p>
+            </div>
+
+            <div class="equipo-card" data-url="equipo-detalles.html">
+            <img src="img/uruguay.png" alt="Croacia">
+            <h4>Uruguay</h4>
+            <p>Semifinalista</p>
+            </div>
+        </div>
+        </div>
+    </section>
+
+ 
+
+        <!-- Carrusel de los mundiales -->
+        <h1 id="titulo-principal">Mundiales a través del Tiempo</h1>
+
+        <div class="slider">
+            <div class="item">
+                <h1>Mexico</h1>
+                2026
+                <img src="img/2026Mundial.png" alt="Mundial 2026">
+            </div>
+            <div class="item" data-url="mundial2022.html">
+                <h1>Qatar</h1>
+                2022
+                <img src="img/2022Mundial.png" alt="Mundial 2022">
+            </div>
+            <div class="item" data-url="mundial2018.html">
+                <h1>Rusia</h1>
+                2018
+                <img src="img/2018Mundial.png" alt="Mundial 2018">
+            </div>
+            <div class="item" data-url="mundial2014.html">
+                <h1>Brasil</h1>
+                2014
+                <img src="img/2014Mundial.png" alt="Mundial 2014">
+            </div>
+            <div class="item" data-url="mundial2010.html">
+                <h1>Sudafrica</h1>
+                2010
+                <img src="img/2010Mundial.png" alt="Mundial 2010">
+            </div>
+            <div class="item">
+                <h1>Alemania</h1>
+                2006
+                <img src="img/2006Mundial.png" alt="Mundial 2006">
+            </div>
+            <div class="item">
+                <h1>Corea del Sur-Japon</h1>
+                2002
+                <img src="img/2002Mundial.png" alt="Mundial 2002">
+            </div>
+            <div class="item">
+                <h1>Francia</h1>
+                1998
+                <img src="img/1998Mundial.png" alt="Mundial 1998">
+            </div>
+            <div class="item">
+                <h1>Estados Unidos</h1>
+                1994
+                <img src="img/1994Mundial.png" alt="Mundial 1994">
+            </div>
+            <div class="item">
+                <h1>Italia</h1>
+                1990
+                <img src="img/1990Mundial.png" alt="Mundial 1990">
+            </div>
+            <div class="item">
+                <h1>Mexico</h1>
+                1986
+                <img src="img/1986Mundial.png" alt="Mundial 1986">
+            </div>
+            <div class="item">
+                <h1>España</h1>
+                1982
+                <img src="img/1982Mundial.png" alt="Mundial 1982">
+            </div>
+            <div class="item">
+                <h1>Argentina</h1>
+                1978
+                <img src="img/1978Mundial.png" alt="Mundial 1978">
+            </div>
+            <div class="item">
+                <h1>Alemania</h1>
+                1974
+                <img src="img/1974Mundial.png" alt="Mundial 1974">
+            </div>
+            <div class="item">
+                <h1>Mexico</h1>
+                1970
+                <img src="img/1970Mundial.png" alt="Mundial 1970">
+            </div>
+
+            <button id="next">></button>
+            <button id="prev"><</button>
+         
+
+
+        </div>
+
+        <div id="footer-placeholder"></div>
+        <script src="app.js" defer></script>
+        <div id="modal-publicacion-placeholder"></div>
+        <a href="faq.html" class="btn-faq-flotante" aria-label="Ayuda / FAQ" title="Preguntas Frecuentes">
+            ?
+        </a>
+        <script>
+            document.addEventListener("DOMContentLoaded", () => {
+                document.querySelectorAll('.equipo-card').forEach(card => {
+                    card.addEventListener('click', () => {
+                        const url = card.getAttribute('data-url');
+                        if (url) {
+                            window.location.href = url;
+                        }
+                    });
+                });
+            });
+        </script>
+
+        
+    </body>
+</html>

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Equipos | La Pelota</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+  <header class="header">
+    <div class="header-top">
+      <!-- Logo -->
+      <a href="index.html" class="logo-header" title="Inicio">
+          <img src="img/LogoPelota2.png" alt="Logo">
+          <h1>La Pelota</h1>
+      </a>
+
+      <!-- Barra de búsqueda -->
+      <div class="search-box">
+        <input type="text" placeholder="Buscar...">
+      </div>
+
+      <!-- Navegación superior -->
+      <nav class="nav-top">
+        <ul>
+          <!-- Botón Configuración -->
+          <li>
+            <button id="btnConfiguracion" class="button1" aria-label="Abrir Configuración de la cuenta" aria-expanded="false" title="Configuración">
+              <svg class="svg-icon" viewBox="0 0 24 24">
+                <path
+                  d="M19.14,12.94a1.43,1.43,0,0,0,0-.94l2.11-1.65a.35.35,0,0,0,.08-.45l-2-3.46a.35.35,0,0,0-.43-.15l-2.49,1a5.13,5.13,0,0,0-1.63-.94L14.5,2.5a.35.35,0,0,0-.34-.27H9.84a.35.35,0,0,0-.34.27L9.14,6.35a5.13,5.13,0,0,0-1.63.94l-2.49-1a.35.35,0,0,0-.43.15l-2,3.46a.35.35,0,0,0,.08.45L4.78,12a1.43,1.43,0,0,0,0,.94l-2.11,1.65a.35.35,0,0,0-.08.45l2,3.46a.35.35,0,0,0,.43.15l2.49-1a5.13,5.13,0,0,0,1.63.94l.36,3.85a.35.35,0,0,0,.34.27h4.32a.35.35,0,0,0,.34-.27l.36-3.85a5.13,5.13,0,0,0,1.63-.94l2.49,1a.35.35,0,0,0,.43-.15l2-3.46a.35.35,0,0,0-.08-.45ZM12,15.5A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z"/>
+              </svg>
+            </button>
+          </li>
+
+          <!-- Modal Configuración -->
+          <div id="modalConfiguracion" class="modal">
+            <div class="modal-content config">
+              <span class="cerrar">&times;</span>
+              <h2>⚙️ Configuración</h2>
+
+              <div class="perfil">
+                <img src="img/FotoPerfilOdiseo.jpg" alt="Foto de perfil" class="perfil-img" />
+                <p><strong>Nombre de usuario:</strong> @Odysseus</p>
+                <p><strong>Descripción:</strong> ******</p>
+              </div>
+
+              <div class="config-opciones">
+                <div class="opcion">
+                  <label>Modo claro:</label>
+                  <label class="switch">
+                    <input type="checkbox" id="modo-claro">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+
+                <div class="opcion">
+                  <label>Lector de pantalla:</label>
+                  <label class="switch">
+                    <input type="checkbox" id="lector-pantalla">
+                    <span class="slider"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Botón Notificaciones -->
+          <li>
+            <button id="btnNotificaciones" class="button" aria-label="Abrir Notificaciones" aria-expanded="false" title="Notificaciones">
+              <svg class="bell" viewBox="0 0 448 512">
+                <path
+                  d="M224 512c35.3 0 63.1-28.7 63.1-64H160.9c0 35.3 27.8 64 63.1 64zM439.4 362.3c-19.9-20.8-55.4-52.1-55.4-154.3
+                  0-77.7-54.5-139.7-127.1-155.2V32c0-17.7-14.3-32-31.9-32s-31.9 14.3-31.9 32v20.8C120.5 68.3 66 130.3 66 208
+                  c0 102.2-35.5 133.5-55.4 154.3-6 6.3-8.7 14.1-8.6 21.7 .1 12.3 9.6 24 24.3 24H423.7c14.7 0 24.2-11.7 24.3-24
+                  .1-7.6-2.6-15.4-8.6-21.7z"/>
+              </svg>
+            </button>
+          </li>
+
+          <!-- Modal Notificaciones -->
+          <div id="modalNotificaciones" class="modal">
+            <div class="modal-content">
+              <span class="cerrar">&times;</span>
+              <h2>🔔 Notificaciones</h2>
+              <p>No tienes notificaciones nuevas.</p>
+            </div>
+          </div>
+
+          <li><a href="registrarse.html">Registrate</a></li>
+          <li><a href="iniciarsesion.html">Iniciar Sesión</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- Parte inferior del header -->
+    <div class="header-bottom">
+      <nav class="nav-bottom">
+        <ul>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="equipos.html">Equipos</a></li>
+          <li><a href="partidos.html">Partidos</a></li>
+          <li><a href="envivos.html">En Vivo</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- =====================================================
+       SECCIÓN EQUIPOS
+       ===================================================== -->
+  <main>
+    <section class="equipos-section">
+      <div class="equipos-hero">
+        <h1 id="titulo-principal">Equipos</h1>
+        <h3>Selecciones del Mundo</h3>
+
+        <!-- 🔍 Barra secundaria centrada debajo del subtítulo -->
+        <div class="search-bar-secondary">
+          <label for="searchEquipos">Buscar:</label>
+          <input type="text" id="searchEquipos" placeholder="Buscar equipo...">
+        </div>
+
+        <p>Conoce a los equipos clasificados y sus últimos enfrentamientos</p>
+
+        <div class="equipos-filtros">
+          <div class="filtro-item">
+            <label for="continente">Continente:</label>
+            <select id="continente">
+              <option>Todos</option>
+              <option>Europa</option>
+              <option>Sudamérica</option>
+              <option>Asia</option>
+              <option>África</option>
+            </select>
+          </div>
+
+          <div class="filtro-tipo">
+            <button class="btn-filtro activo">Todos</button>
+            <button class="btn-filtro">UEFA</button>
+            <button class="btn-filtro">CONMEBOL</button>
+            <button class="btn-filtro">CAF</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carrusel de equipos -->
+      <div class="carousel-section equipos">
+        <div class="carousel-container">
+          <button class="carousel-btn prev">&#10094;</button>
+
+          <div class="carousel-track">
+            <article class="card equipo-card tarjeta-equipo" data-equipo="argentina">
+              <img src="img/escudo-argentina.png" alt="Argentina">
+              <h3>Argentina</h3>
+              <p>Campeón del Mundo 2022</p>
+            </article>
+
+            <article class="card equipo-card tarjeta-equipo" data-equipo="francia">
+              <img src="img/escudo-francia.png" alt="Francia">
+              <h3>Francia</h3>
+              <p>Subcampeón Mundial</p>
+            </article>
+
+            <article class="card equipo-card tarjeta-equipo" data-equipo="brasil">
+              <img src="img/escudo-brasil.png" alt="Brasil">
+              <h3>Brasil</h3>
+              <p>Quinto Campeón Mundial</p>
+            </article>
+
+            <article class="card equipo-card tarjeta-equipo" data-equipo="inglaterra">
+              <img src="img/escudo-inglaterra.png" alt="Inglaterra">
+              <h3>Inglaterra</h3>
+              <p>Campeón Mundial 1966</p>
+            </article>
+          </div>
+
+          <button class="carousel-btn next">&#10095;</button>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-placeholder"></div>
+  <script src="app.js"></script>
+  <div id="modal-publicacion-placeholder"></div>
+        <a href="faq.html" class="btn-faq-flotante" aria-label="Ayuda / FAQ" title="Preguntas Frecuentes">
+            ?
+        </a>
+        <!-- ============================
+     MODAL DE EQUIPO
+   ============================ -->
+  <div id="modalEquipo" class="modal-equipo">
+    <div class="modal-equipo-content">
+      <span class="cerrar-modal-equipo">&times;</span>
+
+      <div class="modal-equipo-body">
+        <img id="equipo-bandera" class="equipo-bandera" src="" alt="Bandera">
+
+        <h2 id="equipo-nombre"></h2>
+        <br> </br>
+        <p id="equipo-titulo"></p>
+
+        <div class="equipo-datos-extra">
+          <p><strong>Confederación:</strong> <span id="equipo-conf"></span></p>
+          <p><strong>Ranking FIFA:</strong> <span id="equipo-ranking"></span></p>
+        </div>
+
+        <button id="btnMasDetalles" class="btn-mas-detalles">
+          Más detalles →
+        </button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

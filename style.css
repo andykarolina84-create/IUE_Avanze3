@@ -1,0 +1,4622 @@
+
+/* =====================================================
+    1. RESET Y FUENTES
+   ===================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/*@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Anton&display=swap');*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+/* =====================================================
+    2. VARIABLES GLOBALES
+   ===================================================== */
+:root {
+  /* Modo oscuro */
+  --color-bg: #2c2c2c;
+  --color-header-bg: #222;
+  --color-accent: blueviolet;
+  --color-accent2: rgb(126, 6, 90);
+  --color-accent3: rgb(207, 155, 255);
+  --color-targeta: rgb(30, 10, 53);
+  --color-text: #ffffff;
+  --color-card-bg: rgb(44, 44, 44);
+  --color-border: #444;
+  --color-hover-bg: rgb(56, 56, 56);
+  --color-link-hover: aqua;
+  --color-shadow: rgb(0, 0, 0);
+  --color-sec-bar:#030303;
+  --color-bg2:#0e021f;
+  --color-bg2-transicion: #4a1b71;
+  --color-text2: #ffffff;
+  --color-text3: #ffffff;
+  --color-text4: #000000;
+  --color-text5: #000000;
+  --color-boton-faq: #8a2be2;
+  
+
+
+
+  /* Tipografías */
+  --font-main: 'Roboto', sans-serif;
+  --font-titles: 'Anton', sans-serif;
+
+  --btn-success: #1ca43a;
+  --btn-success-hover: #178a31;
+  --btn-danger: #d43c2e;
+  --btn-danger-hover: #a82f24;
+}
+
+body.light-mode {
+  /* Modo claro */
+  --color-bg: #f5f5f5;
+  --color-header-bg: #ffffff;
+  --color-accent: #6a0dad;
+  --color-accent2: rgb(126, 6, 90);
+  --color-accent3:#6a0dad;
+  --color-targeta: rgb(255, 255, 255);
+  --color-text: #222;
+  --color-card-bg: #e0e0e0;
+  --color-border: #ccc;
+  --color-hover-bg: #d8d8d8;
+  --color-link-hover: aqua;
+  --color-link-hover: #6a0dad;
+  --color-sec-bar:#2c2c2c;
+  --color-bg2:#7639c5;
+  --color-bg2-transicion: #8049ad;
+  --color-text2: #ffffff;
+  --color-text3: #000000;
+  --color-text4: #000000;
+  --color-text5: #ffffff;
+  --color-boton-faq: #360068;
+
+  --font-main: 'Roboto', sans-serif;
+  --font-titles: 'Poppins', sans-serif;
+}
+
+
+/* =====================================================
+    3. ESTRUCTURA GENERAL 
+   ===================================================== */
+   /*Aplica un fondo con degradado.
+   Centra todo el contenido y establece un flujo vertical.
+   Añade transición suave entre modo oscuro/claro.*/
+html {
+  font-size: clamp(14px, 1.5vw, 18px);
+}
+
+
+/* Asegura que imágenes, videos y carruseles no se salgan */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Todo contenedor principal se ajusta al ancho */
+main, section, header, footer, div[class*="contenedor"], .carousel-container {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ANTES
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent2) 0%,
+    var(--color-bg2-transicion) 20%,
+    var(--color-bg2) 100%
+);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+}  */
+
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--color-accent2) 0%,
+    var(--color-bg2-transicion) 20%,
+    var(--color-bg2) 100%
+);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  /*  Se eliminó el overflow-x: hidden para permitir el sticky */
+  width: 100%;
+  max-width: 100vw;
+}
+
+
+/* =====================================================
+   4. HEADER Y NAVEGACIÓN (corregido)
+   ===================================================== */
+
+/* Contenedor general del header */
+
+.header {
+  
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+} 
+
+/* --- PARTE SUPERIOR --- */
+.header-top {
+  width: 100%;
+  background-color: var(--color-header-bg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 2rem;
+}
+
+.logo-header {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo-header img {
+  width: 45px;
+  height: 45px;
+}
+
+.logo-header h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+/*ANTES*/
+.header { 
+    position: sticky; 
+    top: 0;          
+    z-index: 1000;  
+    background-color: var(--color-header-bg);
+}
+
+/* --- BARRA DE BÚSQUEDA --- */
+.search-box input {
+  width: 400px;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--color-accent);
+  outline: none;
+  background-color: transparent;
+  color: var(--color-text);
+  transition: border-color 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: var(--color-accent);
+}
+
+.search-box input:focus {
+  border-color: var(--color-link-hover);
+}
+
+/* --- BOTONES SUPERIORES --- */
+/*Definicion de Botones*/
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.btn-outline,
+.btn-solid {
+  font-size: 0.9rem;
+  border-radius: 0.3rem;
+  padding: 0.4rem 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+
+/*.btn-outline: con borde y fondo transparente*/
+.btn-outline {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-accent);
+}
+
+
+
+/*.btn-solid: boton fondo de color*/
+.btn-solid {
+  background-color: var(--color-accent);
+  color: #fff;
+}
+
+.btn-solid:hover {
+  background-color: var(--color-accent2);
+}
+
+/* --- PARTE INFERIOR (menú) --- */
+/*
+.header-bottom {
+  width: 100%;
+  background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0;
+}*/
+
+.nav-bottom ul {
+  display: flex;
+  gap: 8rem;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+}
+
+.nav-bottom a {
+  color: var(--color-header-bg);
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+}
+
+.nav-bottom a:hover {
+  color: var(--color-accent);
+}
+
+
+
+/* =====================================================
+    BOTONES CIRCULARES (Configuración y Notificación)
+   ===================================================== */
+
+/* CONFIGURACIÓN  */
+.button1 {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-card-bg);
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+  border: none;
+}
+
+.svg-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-text);
+}
+
+.button1:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.button1:hover .svg-icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.button1:active {
+  transform: scale(0.8);
+}
+
+/* NOTIFICACIÓN  */
+.button {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-card-bg);
+  border-radius: 50%;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.13);
+  border: none;
+}
+
+.bell {
+  width: 18px;
+}
+
+.bell path {
+  fill: var(--color-text);
+}
+
+.button:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.button:hover .bell {
+  animation: bellRing 0.9s both;
+}
+
+@keyframes bellRing {
+  0%, 100% { transform-origin: top; }
+  15% { transform: rotateZ(10deg); }
+  30% { transform: rotateZ(-10deg); }
+  45% { transform: rotateZ(5deg); }
+  60% { transform: rotateZ(-5deg); }
+  75% { transform: rotateZ(2deg); }
+}
+
+.button:active {
+  transform: scale(0.8);
+}
+
+/* =====================================================
+    5. BOTONES GENERALES
+   ===================================================== */
+
+/* Botón circular base */
+.btn-circle {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-card-bg);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.13);
+}
+
+.btn-circle:hover {
+  background-color: var(--color-hover-bg);
+}
+
+/* Configuración */
+.button1 .svg-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--color-text);
+}
+
+.button1:hover .svg-icon {
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Notificaciones */
+.bell {
+  width: 18px;
+}
+
+.bell path {
+  fill: var(--color-text);
+}
+
+.button:hover .bell {
+  animation: bellRing 0.9s both;
+}
+
+@keyframes bellRing {
+  0%, 100% { transform-origin: top; }
+  15% { transform: rotateZ(10deg); }
+  30% { transform: rotateZ(-10deg); }
+  45% { transform: rotateZ(5deg); }
+  60% { transform: rotateZ(-5deg); }
+  75% { transform: rotateZ(2deg); }
+}
+
+.perfil-mini {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid var(--color-accent);
+  transition: transform 0.2s ease;
+}
+.perfil-mini:hover {
+  transform: scale(1.1);
+}
+
+
+/* =====================================================
+    6. MODALES Y CONFIGURACIÓN
+   ===================================================== */
+
+   /*.modal : Estilos para las ventanas emergentes (como configuración o notificaciones):*/
+/* ANTES
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-header-bg);
+  justify-content: center;
+  align-items: center;
+} */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1010;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-header-bg);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: var(--color-card-bg);
+  padding: 20px 30px;
+  border-radius: 10px;
+  color: var(--color-text);
+  box-shadow: 0 0 15px var(--color-header-bg);
+  animation: aparecer 0.3s ease;
+}
+
+@keyframes aparecer {
+  from { transform: translateY(-20px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.cerrar {
+  color: var(--color-accent);
+  float: right;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.cerrar:hover {
+  color: var(--color-link-hover);
+}
+
+/* Contenido del modal de configuración */
+.modal-content.config {
+  width: 400px;
+  text-align: left;
+}
+
+.perfil {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.perfil-img {
+ 
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+  margin-bottom: 0.5rem;
+  margin: 0 auto 0.5rem auto;
+  display: block;
+}
+
+/* =====================================================
+    7. SWITCH Y ACCESIBILIDAD
+   ===================================================== */
+
+/* .switch: Define el interruptor visual para cambiar de modo (claro/oscuro o lector de pantalla)*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+  border: 2px solid var(--color-text3);
+  border-radius: 34px;
+  
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: var(--color-text);
+  border-radius: 50%;
+  transition: 0.4s;
+  
+}
+
+input:checked + .slider {
+  background-color: var(--color-accent);
+  
+}
+
+input:checked + .slider:before {
+  transform: translateX(18px);
+  
+}
+
+/* =====================================================
+    8. NAVEGACIÓN
+   ===================================================== */
+
+/*.nav-top ul organiza los botones de sesión y registro.*/
+
+.nav-top ul {
+  display: flex;
+  gap: 0.9rem;
+  padding-right: 1rem;
+}
+
+.nav-top li:nth-last-child(-n+2) a {
+  background-color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+  padding: .25rem .75rem;
+  border-radius: .3rem;
+  color: var(--color-text2);
+  transition: all .2s ease;
+}
+
+.nav-top li:nth-last-child(-n+2) a:hover {
+  background-color: transparent;
+  color: var(--color-accent);
+}
+
+/* Parte inferior */
+.header-bottom {
+  background-color: var(--color-link-hover);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem 0;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 99;
+
+}
+
+.error-text {
+  color: #ff6666;
+  font-size: 0.8rem;
+  margin-top: 0.2rem;
+  font-weight: 500;
+}
+
+/* =====================================================
+    9. SECCIONES PRINCIPALES
+   ===================================================== */
+
+   /*
+.slider: define el contenedor del carrusel.
+
+.item:son las tarjetas individuales con imágenes, año y país.
+
+Los botones #next y #prev permiten moverse entre ítems.*/
+
+/* Título principal */
+#titulo-principal {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: var(--color-text);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+/* ----- Carrusel principal (Mundiales a través del tiempo) ----- */
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 370px;
+  overflow: hidden;
+}
+
+.item {
+  position: absolute;
+  width: 320px;
+  height: 200px;
+  background-color: var(--color-targeta);
+  border-radius: 10px;
+  padding: 20px;
+  transition: 0.5s;
+  left: calc(50% - 110px);
+}
+
+
+
+
+#next, #prev {
+  position: absolute;
+  top: 40%;
+  background: transparent;
+  border: none;
+  font-size: xx-large;
+  font-family: var(--font-titles);
+  font-weight: bold;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+#next { right: 50px; }
+#prev { left: 50px; }
+
+.item img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* =====================================================
+    10. FORMULARIO DE REGISTRO
+   ===================================================== */
+
+   /*
+.registro :centra el formulario.
+
+.form-container :es la tarjeta con fondo, sombra y padding.
+
+.sign es el botón :principal con efecto hover.
+
+.social-message :muestra una línea decorativa o texto adicional.
+   */
+.registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 200px);
+  background-color: var(--color-bg);
+  padding: 2rem;
+}
+
+.form-container {
+  width: 320px;
+  border-radius: 0.75rem;
+  background-color: var(--color-bg);
+  padding: 2rem;
+  color: var(--color-text);
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.title {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form {
+  margin-top: 1.5rem;
+}
+
+
+
+/* =====================================================
+    12. DISEÑO PARA TODOS LOS CARRUSELES DE VIDEOS 
+   ===================================================== */
+.carousel-section {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.carousel-section h3 {
+  margin-bottom: 1rem;
+  color: var(--color-text3);
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none; 
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  flex: 0 0 280px;
+  background: var(--color-card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.card h4 {
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: var(--color-text2);
+}
+
+/* Flechas */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  z-index: 10;
+}
+
+.carousel-btn.prev { left: 0; }
+.carousel-btn.next { right: 0; }
+
+.carousel-btn:hover {
+  background: var(--color-accent);
+}
+
+
+/* =====================================================
+   Carrusel de Noticias (estilo más visual)
+   ===================================================== */
+
+.carousel-section.noticias {
+  margin-top: 3rem;
+}
+
+.carousel-section.noticias .carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Oculta barra de desplazamiento */
+}
+/*
+.carousel-section.noticias .carousel-track::-webkit-scrollbar {
+  display: none;
+}*/
+
+/* Tarjeta de noticia */
+.carousel-section.noticias .card {
+  position: relative;
+  flex: 0 0 420px; /* Más ancha que las de videos */
+  height: 230px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+/* Imagen de fondo */
+.carousel-section.noticias .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8);
+  transition: filter 0.3s ease;
+}
+/*
+.carousel-section.noticias .card:hover img {
+  filter: brightness(1);
+}*/
+
+/* Texto sobre la imagen */
+.carousel-section.noticias .card h4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.6rem 1rem;
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Botones de navegación */
+.carousel-section.noticias .carousel-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  transition: color 0.3s ease;
+}
+
+.carousel-section.noticias .carousel-btn:hover {
+  color: var(--color-link-hover);
+}
+
+.carousel-section.noticias .carousel-btn.prev { left: 0.5rem; }
+.carousel-section.noticias .carousel-btn.next { right: 0.5rem; }
+
+
+
+/* =====================================================
+   13. FOOTER
+   ===================================================== */
+#footer-placeholder,
+footer {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  background-color: var(--color-header-bg);
+  color: var(--color-text);
+  text-align: center;
+}
+
+.footer {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  border-top: 2px solid var(--color-accent);
+  margin-top: 3rem;
+}
+
+/* --- Sección redes sociales --- */
+.footer-social {
+  background-color: #62d1c3; /* tono menta */
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.footer-social h3 {
+  color: var(--color-text4);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  font-size: 1.2rem;
+}
+
+.social-icons a {
+  color: var(--color-header-bg);
+  font-size: 1.8rem;
+  margin: 0 0.8rem;
+  transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+  color: var(--color-accent2);
+}
+
+/* --- Caja principal de contacto --- */
+.footer-contact {
+  background-color: #000;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-box {
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  max-width: 950px;
+  width: 100%;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1 1 350px;
+  text-align: left;
+}
+
+.contact-left i,
+.contact-right i {
+  font-size: 1.5rem;
+  color: var(--color-accent2);
+}
+
+.contact-left h4,
+.contact-right h4 {
+  margin: 0.8rem 0;
+  color: #fff;
+  font-weight: 700;
+}
+
+/* --- Formulario del footer --- */
+.footer-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-form label {
+  font-weight: 600;
+  color: var(--color-text2);
+}
+
+.footer-form input,
+.footer-form textarea {
+  background-color: #d9d0e3;
+  border: none;
+  padding: 0.5rem 0.7rem;
+  border-radius: 0.3rem;
+  color: #000;
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+}
+
+.footer-form textarea {
+  resize: none;
+  height: 90px;
+}
+
+.footer-form button {
+  background-color: var(--color-accent2);
+  border: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5rem 1.2rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  align-self: center;
+  transition: all 0.3s ease;
+}
+
+.footer-form button:hover {
+  background-color: var(--color-accent);
+  transform: scale(1.05);
+}
+
+/* --- Contacto derecho --- */
+.contact-right p {
+  margin: 0.3rem 0;
+  color: #ccc;
+}
+
+.footer-links {
+  margin-top: 1.2rem;
+}
+
+.footer-links a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: var(--color-accent2);
+}
+
+/* --- Línea inferior --- */
+.footer-bottom {
+  background-color: var(--color-header-bg);
+  padding: 0.8rem;
+  font-size: 0.9rem;
+  color: #ccc;
+  text-align: center;
+}
+
+/* =====================================================
+    15. Registrarse
+   ===================================================== */
+
+/* Fondo fijo y centrado */
+/*
+body {
+  background: linear-gradient(to bottom right, var(--color-accent2), var(--color-bg));
+    background: linear-gradient(
+    to bottom,
+    var(--color-accent2) 0%,
+    var(--color-bg) 40%,
+    var(--color-targeta) 75%,
+    #000000 100%
+  );
+  color: var(--color-text);
+  font-family: var(--font-main);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}*/
+
+/* Contenedor general del formulario */
+.registro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  min-height: calc(100vh - 200px);
+  width: 100%;
+  padding: 2rem;
+  background: none; /* deja ver el gradiente del body */
+}
+
+/* Tarjeta del formulario */
+.form-container {
+  width: 340px;
+  border-radius: 0.75rem;
+  background-color: var(--color-card-bg);
+  padding: 2rem;
+  color: var(--color-text);
+  box-shadow: 0 0 20px var(--color-shadow);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+/* Título principal */
+#titulo-principal {
+  text-align: center;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--color-text2);
+  margin: 2rem 0 1rem 0;
+  text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+/* Subtítulo dentro del formulario */
+.title {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--color-accent);
+}
+
+/* Campos del formulario */
+.input-group {
+  margin-top: 0.8rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group label {
+  margin-top: 0.5rem;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.input-group input {
+  border-radius: 0.375rem;
+  border: 1px solid var(--color-border);
+  outline: none;
+  background-color: var(--color-bg);
+  padding: 0.6rem 0.8rem;
+  color: var(--color-text);
+  font-size: 0.95rem;
+}
+
+.input-group input:focus {
+  border-color: var(--color-link-hover);
+}
+
+/* Botón principal (acceder) */
+
+.sign {
+  display: block;
+  margin: 1.5rem auto 0 auto; /* centrado horizontal */
+  background-color: var( --color-link-hover); /* mismo color base que los otros botones */
+  color: var(--color-text);
+  border: 2px solid var( --color-link-hover);
+  border-radius: 0.375rem;
+  padding: 0.75rem 2rem;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease; /* para el efecto suave */
+}
+
+
+.sign:hover {
+  background-color: transparent;
+  color: var( --color-link-hover);
+  border-color: var( --color-link-hover);
+}
+
+/* Línea decorativa y mensaje */
+.social-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1rem;
+  color: rgba(156, 163, 175, 1);
+}
+
+.social-message .line {
+  height: 1px;
+  flex: 1;
+  background-color: rgba(55, 65, 81, 1);
+  margin: 0 0.5rem;
+}
+
+.social-message .message {
+  font-size: 0.85rem;
+  text-align: center;
+}
+/* =====================================================
+    Buscadores secundarios (En Tendencia, Noticias, etc.)
+   ===================================================== */
+
+.search-bar-secondary {
+  display: flex;
+  justify-content: center; /* centrado horizontal */
+  align-items: center;
+  gap: 0.6rem; /* espacio entre label e input */
+  margin: 1.5rem auto 2.5rem auto; /* centrado con márgenes verticales */
+  width: 100%;
+  max-width: 600px; /* ancho máximo para que no se vea enorme */
+}
+
+.search-bar-secondary input::placeholder {
+  color: var(--color-text3); /* blanco puro para máximo contraste */
+  opacity: 1; /* evita la transparencia que reduce contraste */
+}
+
+.search-bar-secondary label {
+  color: var(--color-text2);
+  font-weight: 600;
+  font-family: var(--color-text);
+  font-size: 1rem;
+}
+
+.search-bar-secondary input {
+  width: 260px;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  border: 1.5px solid var(--color-accent);
+  outline: none;
+  background-color: var(--color-bg);
+  color: var(--color-text3);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px var(--color-shadow);
+}
+
+
+.search-bar-secondary input:focus {
+  border-color: var(--color-link-hover);
+  transform: scale(1.02);
+}
+
+/* =====================================================
+    SECCIÓN “EN TENDENCIA” (ajustada y más compacta)
+   ===================================================== */
+
+/* Contenedor general */
+.trending-section {
+  margin-top: 2rem; /*  más cerca del carrusel principal */
+  padding: 0 3rem;
+  color: var(--color-text);
+}
+
+/* Título principal “En Tendencia” */
+.trending-section h2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--font-titles);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  color: var(--color-text2);
+}
+
+/* Buscador justo debajo del título */
+.trending-section .search-bar-secondary {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.8rem 0;
+  padding-right: 1.5rem;
+}
+
+.trending-section .search-bar-secondary label {
+  color: var(--color-text2);
+  font-weight: 600;
+  font-family: var(--font-main);
+}
+
+.trending-section .search-bar-secondary input {
+  width: 220px; /*  un poco más pequeño */
+  padding: 0.45rem 0.9rem;
+  border-radius: 1rem;
+  border: 1.5px solid var(--color-accent);
+  outline: none;
+  background-color: var(--color-bg);
+  color: var(--color-text3);
+  font-family: var(--font-main);
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 6px var(--color-shadow);
+}
+
+.trending-section .search-bar-secondary input:focus {
+  border-color: var(--color-link-hover);
+  transform: scale(1.02);
+}
+
+.trending-section .search-bar-secondary input::placeholder {
+  color: var(--color-text3);
+  opacity: 1;
+}
+
+/* =====================================================
+    Carrusel de Noticias (más pequeño y elevado)
+   ===================================================== */
+
+.carousel-section.noticias {
+  margin-top: 1.5rem; /*  espacio uniforme debajo del buscador */
+  position: relative;
+}
+
+.carousel-section.noticias h3 {
+  margin-bottom: 0.8rem;
+  color: var(--color-text2);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* Contenedor y pista */
+.carousel-section.noticias .carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+/*
+.carousel-section.noticias .carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-section.noticias .carousel-track::-webkit-scrollbar {
+  display: none;
+}*/
+
+/* Tarjeta de noticia más pequeña */
+.carousel-section.noticias .card {
+  position: relative;
+  flex: 0 0 320px; /*  antes 420px */
+  height: 190px;  /*  antes 230px */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carousel-section.noticias .card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.45);
+}
+
+/* Imagen */
+.carousel-section.noticias .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85);
+  transition: filter 0.3s ease;
+}
+
+.carousel-section.noticias .card:hover img {
+  filter: brightness(1);
+}
+
+/* Texto sobre la imagen */
+.carousel-section.noticias .card h4 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  color: var(--color-text2);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  backdrop-filter: blur(4px);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+}
+
+/* Flechas */
+.carousel-section.noticias .carousel-btn {
+  background: transparent;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.6rem;
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  z-index: 5;
+  transition: color 0.3s ease;
+}
+
+.carousel-section.noticias .carousel-btn:hover {
+  color: var(--color-link-hover);
+}
+
+.carousel-section.noticias .carousel-btn.prev { left: 0.3rem; }
+.carousel-section.noticias .carousel-btn.next { right: 0.3rem; }
+
+
+ /*Evita desplazamiento horizontal en toda la página */
+/* ANTES
+html, body {
+  width: 100%;
+  max-width: 100vw; 
+}  */
+
+
+html, body {
+  
+  width: 100%;
+  max-width: 100vw; 
+}
+
+/* Asegura que solo los carruseles puedan hacer scroll horizontal */
+/*
+.carousel-track {
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}*/
+
+/* Prevenir que los contenedores provoquen desbordamiento */
+.header
+.slider,
+.trending-section,
+.carousel-section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.perfil-header-img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+  margin-left: 0.3rem;
+  transition: transform 0.3s ease;
+}
+
+.perfil-header-img:hover {
+  transform: scale(1.1);
+}
+
+.perfil-header-img:hover {
+  transform: scale(1.1);
+}
+
+
+/* Corrige posibles “desbordes invisibles” causados por márgenes negativos o botones */
+button, img, .item {
+  max-width: 100%;
+}
+/* =====================================================
+   Carrusel de Videos (corregido para evitar scroll global)
+   ===================================================== */
+
+.carousel-section.videos {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.carousel-section.videos h3 {
+  margin-bottom: 1rem;
+  color: var(--color-text2);
+  font-family: var(--font-titles);
+  font-weight: 600;
+}
+
+/* Contenedor del carrusel */
+.carousel-section.videos .carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden; /* ✅ evita que el scroll horizontal se escape al body */
+}
+
+/* Pista desplazable */
+.carousel-section.videos .carousel-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;       /* solo aquí se podrá hacer scroll */
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+  scrollbar-width: none;  /* Firefox */
+  padding-bottom: 1rem;   /* pequeño margen visual */
+}
+
+
+/* Tarjetas individuales */
+.carousel-section.videos .card {
+  flex: 0 0 300px; /* cada tarjeta tiene ancho fijo, evita expandirse */
+  background: var(--color-card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--color-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+/* Videos e imágenes */
+.carousel-section.videos .card video,
+.carousel-section.videos .card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--color-border);
+  background-color: var(--color-bg);
+}
+
+/* Título */
+.carousel-section.videos .card h4 {
+  padding: 0.8rem;
+  font-size: 1rem;
+  color: var(--color-text);
+  font-family: var(--font-main);
+  text-align: left;
+}
+
+/* Flechas laterales */
+.carousel-section.videos .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-card-bg);
+  color: var(--color-accent);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.carousel-section.videos .carousel-btn.prev { left: 0; }
+.carousel-section.videos .carousel-btn.next { right: 0; }
+
+.carousel-section.videos .carousel-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+
+/* =====================================================
+    Carrusel de Publicaciones
+   ===================================================== */
+
+.carousel-section.publicaciones {
+  margin-top: 3rem;
+  position: relative;
+}
+
+.carousel-section.publicaciones h3 {
+  margin-bottom: 1rem;
+  color: var(--color-text2);
+  font-family: var(--font-titles);
+  font-weight: 600;
+}
+
+/* Contenedor del carrusel */
+.carousel-section.publicaciones .carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Pista desplazable (horizontal) */
+.carousel-section.publicaciones .carousel-track {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+/*
+.carousel-section.publicaciones .carousel-track::-webkit-scrollbar {
+  display: none;
+}*/
+
+/* Tarjeta individual */
+.publicacion-card {
+  flex: 0 0 600px;
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px var(--color-shadow);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  padding: 1rem;
+}
+
+/* Imagen principal */
+.publi-imagen {
+  position: relative;
+  flex: 1;
+}
+
+.publi-imagen img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Texto sobre la imagen (autor y tiempo) */
+/*
+.publi-meta {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.7rem;
+  display: flex;
+  gap: 0.8rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  align-items: center;
+}*/
+
+.publi-meta {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.7rem;
+  display: flex;
+  gap: 0.8rem;
+  
+  background: rgba(0, 0, 0, 0.5); 
+  border-radius: 1rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+ 
+  color: #ffffff !important; 
+  align-items: center;
+}
+
+/* Contenido textual */
+.publi-contenido {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.publi-contenido h4 {
+  font-family: var(--font-titles);
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+/* Comentarios dentro de la publicación */
+.comentario {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+/*
+.comentario .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}*/
+
+.comentario .usuario {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+}
+
+.comentario p {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0.2rem 0;
+}
+
+/* Flechas del carrusel */
+.carousel-section.publicaciones .carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--color-card-bg);
+  color: var(--color-accent);
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  padding: 0.2rem 0.6rem;
+  /*border-radius: 50%;*/
+  z-index: 10;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.carousel-section.publicaciones .carousel-btn.prev { left: 0; }
+.carousel-section.publicaciones .carousel-btn.next { right: 0; }
+
+.carousel-section.publicaciones .carousel-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+/* =====================================================
+   ENCABEZADO DE NOTICIAS (Título + Hashtags + Buscador)
+   ===================================================== */
+
+
+.tag {
+  font-weight: 600;
+  color: #fff;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+/* Colores individuales */
+.tag-rojo { background-color: #ff4040; }
+.tag-verde { background-color: #22c55e; }
+.tag-azul { background-color: #3b82f6; }
+.tag-morado { background-color: #8b5cf6; }
+
+
+/* =====================================================
+   SECCIÓN DE NOTICIAS (Diseño adaptado a La Pelota)
+   ===================================================== */
+
+.noticias-container {
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto 4rem auto;
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+/* ----- Layout general (2 columnas: lista + noticia) ----- */
+.noticias-layout {
+  display: grid;
+  grid-template-columns: 30% 65%;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* =====================================================
+   Columna Izquierda: Lista de Noticias
+   ===================================================== */
+.noticias-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.noticia-item {
+  background-color: var(--color-card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 12px var(--color-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+/*
+.noticia-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 18px var(--color-accent2);
+}*/
+
+.noticia-item img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-bottom: 2px solid var(--color-accent2);
+}
+
+.noticia-item h3 {
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 0.6rem 1rem 0.2rem 1rem;
+  font-family: var(--font-titles);
+  letter-spacing: 0.5px;
+}
+
+.noticia-item p {
+  color: var(--color-text3);
+  font-size: 0.85rem;
+  margin: 0 1rem 1rem 1rem;
+  font-family: var(--font-main);
+}
+
+/* =====================================================
+   Columna Derecha: Noticia Principal
+   ===================================================== */
+.noticia-principal {
+  background-color: var(--color-card-bg);
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 0 15px var(--color-shadow);
+  transition: background-color 0.3s ease;
+}
+
+.noticia-principal h2 {
+  font-size: 1.6rem;
+  color: var(--color-text);
+  font-family: var(--font-titles);
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.noticia-principal .intro {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1rem;
+  font-family: var(--font-main);
+}
+
+.noticia-contenido p {
+  line-height: 1.6;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.img-noticia {
+  width: 100%;
+  border-radius: 10px;
+  margin: 1rem 0;
+  object-fit: cover;
+  box-shadow: 0 0 10px var(--color-shadow);
+  border: 2px solid var(--color-accent2);
+}
+
+/* =====================================================
+   Comentarios (en noticia principal)
+   ===================================================== */
+.comentarios {
+  margin-top: 2rem;
+}
+
+.comentarios h3 {
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-family: var(--font-titles);
+}
+
+.comentario {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  background-color: var(--color-hover-bg);
+  padding: 0.8rem;
+  border-radius: 10px;
+  margin-bottom: 0.8rem;
+  transition: background-color 0.3s ease;
+}
+
+.comentario:hover {
+  background-color: var(--color-targeta);
+}
+
+.comentario .avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--color-accent);
+}
+
+.comentario .usuario {
+  font-weight: 600;
+  color: var(--color-accent3); /* relleno */
+  font-size: 0.9rem;
+}
+
+.comentario p {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0.3rem 0 0 0;
+}
+
+
+
+/* =====================================================
+   SECCIÓN DE PARTIDOS
+   ===================================================== */
+.contenedor-partidos {
+  padding: 40px;
+  color: var(--color-text);
+  text-align: center;
+}
+
+
+
+.tabla-partidos h2 {
+  color: var(--color-accent);
+  margin: 30px 0 15px;
+}
+
+.partido {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  background-color: var(--color-card-bg);
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.partido:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px var(--color-accent2);
+}
+
+.equipo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.equipo img {
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+}
+
+.resultado {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+/* =====================================================
+   SECCIÓN EQUIPOS MUNDIALISTAS
+   ===================================================== */
+
+.equipos-hero {
+  text-align: center;
+  padding: 5rem 2rem 2rem;
+  color: var(--color-text);
+  text-shadow: 0 0 15px rgba(0,0,0,0.7);
+  position: relative;
+}
+
+.equipos-hero h1 {
+  font-family: var(--font-titles);
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 0.5rem;
+}
+
+.equipos-subtitulo {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: var(--color-text2);
+  margin-bottom: 2rem;
+}
+
+.noticias-header p{
+
+  color: var(--color-text2)
+}
+
+/* Filtros globales */
+.equipos-filtros {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.filtro-item label {
+  font-weight: 600;
+  color: var(--color-text);
+  margin-right: 0.5rem;
+}
+
+.filtro-item select {
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filtro-item select:hover {
+  background-color: var(--color-accent2);
+}
+
+/* =================================================
+   TARJETAS DE EQUIPOS
+   ===================================================== */
+
+.carousel-section.equipos {
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.equipo-card {
+  background-color: var(--color-card-bg);
+  text-align: center;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: var(--color-text);
+  min-width: 220px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: var( --color-shadow);
+  position: relative;
+  z-index: 1;
+}
+
+.equipo-card img {
+ /* width: 50px;*/
+  /*border-radius: 100%;*/
+  margin-bottom: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.equipo-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px var(--color-accent2);
+}
+
+.equipo-card:hover img {
+  transform: scale(1.1);
+}
+
+.equipo-card h4 {
+  font-family: var(--font-titles);
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+  color: var(--color-text);
+}
+
+.equipo-card p {
+  font-size: 0.9rem;
+  color: #bbb;
+}
+
+
+/* =====================================================
+   CAMPANAS DE RECORDATORIO EN CADA PARTIDO
+   ===================================================== */
+.resultado {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.btn-campana {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 1em;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btn-campana:hover {
+  color: var(--color-accent2);
+  transform: scale(1.3);
+}
+
+.btn-campana.activa {
+  color: gold;
+  transform: scale(1.2);
+}
+
+
+/* =====================================================
+   FILTROS Y BÚSQUEDA DE PARTIDOS
+   ===================================================== */
+.filtros-partidos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 35px;
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.filtros-partidos label {
+  margin-right: 8px;
+  color: var(--color-text2);
+}
+
+/* Campo de búsqueda */
+.filtro-buscar {
+  display: flex;
+  align-items: center;
+  background-color: var(--color-card-bg);
+  padding: 8px 12px;
+  border-radius: 20px;
+  gap: 8px;
+}
+
+.filtro-buscar input {
+  background: none;
+  border: none;
+  color: var(--color-text);
+  outline: none;
+  font-size: 1em;
+}
+
+.btn-buscar {
+  background: none;
+  border: none;
+  color: var(--color-accent);
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btn-buscar:hover {
+  color: var(--color-accent2);
+  transform: scale(1.2);
+}
+
+/* Selector de equipos */
+.filtro-equipos select {
+  background-color: var(--color-accent);
+  border: none;
+  color: white;
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.filtro-equipos select:hover {
+  background-color: var(--color-accent2);
+}
+
+/* Botones de filtro */
+.filtro-tipo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-filtro {
+  background: none;
+  border: 2px solid var(--color-accent);
+  border-radius: 20px;
+  padding: 8px 16px;
+  color: var(--color-text2);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-filtro:hover {
+  background-color: var(--color-accent2);
+  color: #fff;
+}
+
+.btn-filtro.activo {
+  background-color: var(--color-accent);
+  color: white;
+  border-color: var(--color-accent);
+}
+
+/* =====================================================
+   BARRA DE FILTROS EN PARTIDOS (usa estilos globales)
+   ===================================================== */
+.barra-filtros-partidos {
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center;
+  gap: 2rem; 
+  margin: 1rem 3rem 2rem auto; 
+  flex-wrap: wrap; /* responsive */
+}
+
+.barra-filtros-partidos label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.barra-filtros-partidos select {
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  font-family: var(--font-main);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.barra-filtros-partidos select:hover {
+  background-color: var(--color-accent2);
+}
+
+.barra-filtros-partidos .btn-filtro {
+  background: none;
+  border: 1.8px solid var(--color-accent);
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  color: var(--color-text);
+  cursor: pointer;
+  font-family: var(--font-main);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.barra-filtros-partidos .btn-filtro:hover {
+  background-color: var(--color-accent2);
+  color: #fff;
+}
+
+.barra-filtros-partidos .btn-filtro.activo {
+  background-color: var(--color-accent);
+  color: #fff;
+  border-color: var(--color-accent);
+}
+
+
+/* =====================================================
+   SECCIÓN EN VIVOS - Fondo completo y oscurecido
+   ===================================================== */
+.envivos-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  margin: 0;
+  text-align: center;
+  background: transparent; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 6rem 2rem 3rem 2rem;
+  overflow: hidden;
+  border-radius: 0;
+  z-index: 0;
+}
+
+
+.envivos-section::before {
+  content: "";
+  position: fixed;
+  top: 110px; /* cambia este valor según la altura real del header */
+  left: 0;
+  width: 100vw;
+  height: calc(100vh - 110px); /* para que el gradiente empiece justo debajo */
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Asegura que el contenido quede por encima del oscurecimiento */
+.envivos-section > * {
+  position: relative;
+  z-index: 1;
+}
+
+.titulo-busqueda h3{
+  color: var(--color-text2);
+}
+
+/* =====================================================
+    CARRUSEL - TARJETAS
+   ===================================================== */
+
+.card,
+.noticia-item,
+.publicacion-card,
+.envivo-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.card:hover,
+.noticia-item:hover,
+.publicacion-card:hover,
+.envivo-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px var(--color-accent2),
+              0 0 35px rgba(138, 43, 226, 0.3);
+  filter: brightness(1.05);
+}
+
+/* Efecto extra para secciones de videos o en vivos */
+.carousel-section.videos .card:hover,
+.carousel-section.publicaciones .publicacion-card:hover,
+.envivos-section .envivo-card:hover {
+  box-shadow: 0 0 25px var(--color-accent2),
+              0 0 45px rgba(126, 6, 90, 0.6);
+  filter: brightness(1.08);
+}
+
+
+
+/* =====================================================
+   ETIQUETA "EN VIVO" PARA TARJETAS DEL CARRUSEL
+   ===================================================== */
+
+.envivo-card {
+  position: relative;
+}
+
+.envivo-etiqueta {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  z-index: 10;
+  animation: blink 1.3s infinite;
+}
+
+
+/* =====================================================
+   PANEL DE CONTROL ADMINISTRADOR
+   ===================================================== */
+
+/* Contenedor general */
+.admin-panel {
+  width: 90%;
+  max-width: 1200px;
+  margin: 2rem auto 4rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+/* ---------- Perfil del administrador ---------- */
+.admin-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: var(--color-card-bg);
+  padding: 1.5rem 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px var(--color-shadow);
+}
+
+.admin-avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 2px solid var(--color-accent);
+  object-fit: cover;
+}
+
+.admin-info h2 {
+  font-family: var(--font-titles);
+  font-size: 1.8rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+.admin-info p {
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+.admin-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.btn-acceso {
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  padding: 0.4rem 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-acceso:hover {
+  background-color: var(--color-accent2);
+  transform: scale(1.05);
+}
+
+/* ---------- Resumen de tarjetas ---------- */
+.admin-resumen {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.2rem;
+}
+
+.resumen-card {
+  background-color: var(--color-card-bg);
+  border-radius: 1rem;
+  text-align: center;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px var(--color-shadow);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resumen-card:hover {
+  transform: scale(1.04);
+  box-shadow: 0 0 20px var(--color-accent2);
+}
+
+.resumen-card h3 {
+  color: var(--color-text);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.resumen-card p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 0.8rem;
+}
+
+.btn-secundario {
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff;
+  border-radius: 1rem;
+  padding: 0.4rem 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-secundario:hover {
+  background-color: var(--color-accent2);
+  transform: scale(1.05);
+}
+
+/* ---------- Sección de estadísticas ---------- */
+.admin-estadisticas {
+  background-color: var(--color-card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px var(--color-shadow);
+}
+
+.admin-estadisticas h2 {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  font-family: var(--font-titles);
+}
+
+/* ---------- Tablas generales (usuarios y publicaciones) ---------- */
+.tabla-admin {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: var(--color-card-bg);
+  border-radius: 0.8rem;
+  overflow: hidden;
+  box-shadow: 0 0 10px var(--color-shadow);
+}
+
+.tabla-admin th,
+.tabla-admin td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  color: var(--color-text);
+  font-size: 0.95rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.tabla-admin th {
+  background-color: var(--color-header-bg);
+  font-weight: 700;
+  font-family: var(--font-main);
+}
+
+.tabla-admin tr:hover {
+  background-color: var(--color-hover-bg);
+}
+
+.mini-foto {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.estado {
+  padding: 0.2rem 0.7rem;
+  border-radius: 1rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  font-size: 0.85rem;
+}
+
+.estado.activo {
+  background-color: #2ecc71;
+  color: #fff;
+}
+
+.estado.bloqueado {
+  background-color: #e74c3c;
+  color: #fff;
+}
+
+.estado.espera {
+  background-color: #f1c40f;
+  color: #222;
+}
+
+/* ---------- Configuración del sitio ---------- */
+.admin-configuracion {
+  background-color: var(--color-card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px var(--color-shadow);
+}
+
+.admin-configuracion h2 {
+  font-family: var(--font-titles);
+  font-size: 1.6rem;
+  color: var(--color-text);
+  margin-bottom: 1.5rem;
+}
+
+.configuracion-contenedor {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.config-columna {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  background-color: var(--color-bg);
+  border-radius: 0.8rem;
+  padding: 1.5rem;
+  box-shadow: inset 0 0 5px var(--color-shadow);
+}
+
+.config-columna h3 {
+  font-family: var(--font-titles);
+  color: var(--color-accent);
+  margin-bottom: 0.5rem;
+}
+
+.config-columna label {
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.config-columna input,
+.config-columna select {
+  padding: 0.4rem 0.7rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-border);
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+}
+
+.btn-primario {
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  margin-top: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primario:hover {
+  background-color: var(--color-accent2);
+  transform: scale(1.05);
+}
+
+.btn-editar {
+  background-color: var(--color-accent);
+  border: none;
+  color: #fff;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-editar:hover {
+  background-color: var(--color-accent2);
+}
+
+.lista-categorias li {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 0.6rem; 
+  margin-bottom: 0.7rem;
+}
+
+.lista-categorias button {
+  flex-shrink: 0; 
+}
+
+.btn-eliminar {
+  background-color: #e74c3c;
+  border: none;
+  color: #fff;
+  border-radius: 0.4rem;
+  padding: 0.3rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-eliminar:hover {
+  background-color: #c0392b;
+}
+
+.btn-agregar {
+  background-color: #1abc9c;
+  border: none;
+  color: #fff;
+  border-radius: 0.5rem;
+  padding: 0.4rem 1rem;
+  margin-top: 1rem;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-agregar:hover {
+  background-color: #16a085;
+  transform: scale(1.05);
+}
+
+
+.grafica-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.grafica-img {
+  width: 400px;
+  max-width: 90%;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--color-shadow);
+}
+
+/* ===========================
+   MODAL GESTIÓN USUARIO
+   =========================== */
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content.usuario {
+  background: var(--color-card-bg);
+  color: var(--color-text);
+  border-radius: 1rem;
+  padding: 2rem;
+  width: 480px;
+  position: relative;
+  box-shadow: 0 0 25px var(--color-shadow);
+  text-align: center;
+}
+
+.modal-content.usuario .cerrar {
+  position: absolute;
+  top: 10px; right: 15px;
+  background: none;
+  border: none;
+  color: var(--color-text);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.usuario-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-atras, .btn-editar {
+  background: var(--color-header-bg);
+  color: var(--color-text3);
+  border: none;
+  border-radius: 20px;
+  padding: 0.4rem 1rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.usuario-foto {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.usuario-info {
+  margin-top: 1.5rem;
+  text-align: left;
+}
+
+.usuario-info p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.acciones, .roles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.btn-bloquear {
+  background: #e74c3c;
+  border: none;
+  color: #ffffff ;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-reset, .btn-rol {
+  background: rgb(111, 67, 198);
+  border: none;
+  color: white;
+  padding: 0.6rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn-rol.user {
+  background: rgb(111, 67, 198);
+}
+.btn-rol.admin {
+  background: rgb(111, 67, 198);
+  
+}
+.btn-rol:hover, .btn-reset:hover, .btn-atras:hover, .btn-editar:hover {
+  opacity: 0.8;
+  background: rgb(85, 0, 255);
+  
+}
+.btn-bloquear:hover{
+  background: rgb(117, 1, 1);
+}
+
+/* =====================================================
+   Modal de Publicaciones (Administrador)
+   ===================================================== */
+
+.modal-content.publicacion {
+  background-color: var(--color-card-bg);
+  color: var(--color-text);
+  padding: 2rem;
+  border-radius: 1rem;
+  width: 80%;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 0 20px var(--color-shadow);
+  position: relative;
+}
+
+.publicacion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.publicacion-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.publicacion-body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.publicacion-info {
+  flex: 2;
+}
+
+.publicacion-info h3 {
+  margin-bottom: 0.5rem;
+}
+
+.publicacion-info p {
+  margin: 0.3rem 0;
+  line-height: 1.5;
+}
+
+.publicacion-lateral {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.pub-img {
+  width: 140px;
+  height: 140px;
+  border-radius: 0.8rem;
+  object-fit: cover;
+  box-shadow: 0 0 8px var(--color-shadow);
+}
+
+/* Botones verdes y rojos */
+.btn-verde {
+  background-color: #1ca43a;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-verde:hover {
+  background-color: #178a31;
+  transform: scale(1.05);
+}
+
+.btn-rojo {
+  background-color: #d43c2e;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.6rem 1.3rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-rojo:hover {
+  background-color: #a82f24;
+  transform: scale(1.05);
+}
+
+.autor {
+  color: var(--color-accent2);
+}
+
+.modal-content.publicacion .cerrar {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: transparent;
+}
+
+/* =====================================================
+   Modal de Agregar / Editar Categoría
+   ===================================================== */
+.input-categoria {
+  margin-left: 0.5rem;
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: 0.6rem;
+  padding: 0.4rem 0.8rem;
+  color: var(--color-text);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  width: 60%;
+  transition: all 0.3s ease;
+}
+
+.input-categoria:focus {
+  border-color: var(--color-accent);
+  outline: none;
+  transform: scale(1.02);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .admin-profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .admin-buttons {
+    justify-content: center;
+  }
+
+  .configuracion-contenedor {
+    grid-template-columns: 1fr;
+  }
+
+  .tabla-admin th, .tabla-admin td {
+    font-size: 0.8rem;
+  }
+}
+
+/* ================================
+   👤 PERFIL DE USUARIO (ENCABEZADO)
+   ================================ */
+.contenedor-perfil {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+.perfil-usuario {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-card-bg);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px var(--color-shadow);
+  margin-bottom: 2rem;
+}
+
+.perfil-info {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.perfil-foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid var(--color-accent);
+}
+
+.perfil-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.perfil-stats p {
+  margin-top: 0.2rem;
+  font-weight: bold;
+  color: var(--color-accent3);
+}
+
+.btn-publicar {
+  margin-top: 1rem;
+  background-color: var(--color-accent);
+  color: white;
+  border: none;
+  padding: 0.7rem 1.4rem;
+  border-radius: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-publicar:hover {
+  background-color: var(--color-accent2);
+  transform: scale(1.05);
+}
+
+/* =====================================================
+    CARRUSEL VERTICAL - PERFIL DE USUARIO
+   ===================================================== */
+
+/* Contenedor principal del carrusel vertical */
+#carrusel-vertical {
+  margin-top: 2rem;
+  position: relative;
+}
+
+/* Título */
+#carrusel-vertical h3 {
+  margin-bottom: 1rem;
+  color: var(--color-text);
+  font-family: var(--font-titles);
+  font-weight: 600;
+  text-align: left;
+}
+
+/* Contenedor del carrusel */
+#carrusel-vertical .carousel-container {
+  position: relative;
+  overflow: hidden; /* Asegura que solo se vea la ventana */
+  height: 600px; /* Altura visible de la ventana */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; /* Asegura que el track se centre */
+}
+
+#carrusel-vertical .carousel-track {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Oculta el scrollbar en navegadores WebKit */
+#carrusel-vertical .carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Tarjetas de publicación (se mantienen igual) */
+#carrusel-vertical .publicacion-card {
+  flex: 0 0 auto;
+  background: var(--color-card-bg);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 20px var(--color-shadow);
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: row;
+  gap: 1.2rem;
+  padding: 1rem;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Imagen de la publicación */
+#carrusel-vertical .publi-imagen {
+  position: relative;
+  flex: 1;
+}
+
+#carrusel-vertical .publi-imagen img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0.75rem;
+  object-fit: cover;
+}
+
+/* Metadatos (autor y tiempo) */
+#carrusel-vertical .publi-meta {
+  position: absolute;
+  bottom: 0.5rem;
+  left: 0.7rem;
+  display: flex;
+  gap: 0.8rem;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 1rem;
+  padding: 0.3rem 0.7rem;
+  font-size: 0.8rem;
+  color: var(--color-text);
+  align-items: center;
+}
+
+/* Contenido textual */
+#carrusel-vertical .publi-contenido {
+  flex: 1.3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#carrusel-vertical .publi-contenido h4 {
+  font-family: var(--font-titles);
+  font-size: 1.1rem;
+  color: var(--color-text);
+  margin-bottom: 0.5rem;
+}
+
+/* Comentarios dentro de la publicación */
+#carrusel-vertical .comentario {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+#carrusel-vertical .comentario .avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+#carrusel-vertical .comentario .usuario {
+  font-weight: 600;
+  color: var(--color-accent);
+  font-size: 0.9rem;
+}
+
+#carrusel-vertical .comentario p {
+  font-size: 0.85rem;
+  color: var(--color-text);
+  margin: 0.2rem 0;
+}
+
+/* =====================================================
+    BOTONES DE NAVEGACIÓN VERTICALES (GENERAL)
+   ===================================================== */
+#carrusel-vertical .carousel-btn {
+  /* ESTOS ESTILOS SON NECESARIOS para el centrado, tamaño, y apariencia */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%); /* Centra horizontalmente */
+  background: var(--color-card-bg);
+  color: var(--color-accent);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.6rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+/* =====================================================
+   BOTONES DE NAVEGACIÓN VERTICALES (POSICIÓN)
+   ===================================================== */
+#carrusel-vertical .carousel-btn.prev {
+ 
+  top: -10px;
+}
+
+#carrusel-vertical .carousel-btn.next {
+  
+  bottom: -10px;
+}
+
+#carrusel-vertical .carousel-btn.prev {
+  top: 10px;
+}
+
+#carrusel-vertical .carousel-btn.next {
+  bottom: 10px;
+}
+
+#carrusel-vertical .carousel-btn:hover {
+  background: var(--color-accent);
+  color: var(--color-text);
+  transform: translateX(-50%) scale(1.1);
+}
+
+
+/* ================================
+   FAQ Section
+================================ */
+.faq-section {
+  padding: 2rem 4rem;
+  color: var(--color-text);
+  font-family: var(--font-main);
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.faq-item {
+  background: var(--color-card-bg);
+  border: 1.5px solid var(--color-accent);
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 0 12px var(--color-shadow);
+}
+
+.faq-question {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--color-accent);
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background-color: var(--color-bg-hover);
+}
+
+.faq-question i {
+  transition: transform 0.3s ease;
+}
+
+.faq-question i.rotate {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  background-color: var(--color-bg);
+  padding: 0 1.5rem;
+  transition: max-height 0.4s ease;
+}
+
+.faq-answer p {
+  margin: 1rem 0;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+
+
+#header-placeholder {
+  width: 100%;
+  display: block;
+}
+
+/* =====================================================
+    SOBRE NOSOTROS
+   ===================================================== */
+
+.contenedor-sobre-nosotros {
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto 5rem auto; /* Ajuste para espacio superior e inferior */
+    padding: 0 1rem;
+    color: var(--color-text);
+}
+
+.info-contacto-galeria {
+    display: grid;
+    /* Divide el contenido en dos columnas principales */
+    grid-template-columns: 1fr 1fr; 
+    gap: 3rem;
+    align-items: flex-start; /* Alinea el inicio de las columnas */
+}
+
+/* --- Columna de Texto e Información de Contacto (Izquierda) --- */
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem; /* Espacio entre las secciones (Acerca de, Contáctanos, Galería) */
+    padding-top: 1rem;
+}
+
+.info-section h2 {
+    font-family: var(--font-titles, 'Anton', sans-serif);
+    font-size: 1.8rem;
+    color: var(--color-text2);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    /* CAMBIO: Línea de separación ahora usa el color del menú inferior (aqua/azul) */
+    border-bottom: 2px solid var(--color-link-hover); 
+    display: inline-block;
+    padding-bottom: 0.2rem;
+}
+
+/* Estilo para los subtítulos "LOREM NIPSUN" en blanco */
+.subtitulo-blanco {
+    font-family: var(--font-main, 'Roboto', sans-serif);
+    font-size: 1.2rem;
+    color: var(--color-text2) !important; /* Forzar blanco */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+/* ESTILO ORIGINAL DE H3 (ahora usado para otros h3 en la app, pero aquí usamos .subtitulo-blanco) */
+.info-section h3 {
+    font-family: var(--font-main, 'Roboto', sans-serif);
+    font-size: 1.2rem;
+    color: var(--color-accent); /* Color morado para subtítulos */
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.info-section p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--color-text2);
+}
+
+/* --- Contáctanos --- */
+.contactanos {
+    margin-top: 1rem;
+}
+
+.contacto-items p {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: var(--color-text2);
+}
+
+
+.contacto-items i {
+    color: var(--color-text2); /* Color blanco para los iconos de contacto */
+    font-size: 1.1rem;
+}
+
+/* Oculta el título de la galería en desktop, ya que está a la derecha */
+.galeria-titulo-mobile {
+    display: none; 
+}
+
+
+/* --- Columna de Galería (Derecha) --- */
+.galeria-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* La primera imagen del equipo (más grande) */
+.equipo-principal img {
+    width: 100%;
+    height: auto;
+    max-height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Cuadrículas 2x2 para las fotos inferiores */
+.galeria-grid.dos-columnas {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem; /* Espacio entre las 4 imágenes inferiores */
+}
+
+/* Nueva clase para la 6ta imagen que ocupa 1 columna */
+.galeria-grid.una-columna {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    /* Para centrar la imagen dentro de la columna del grid */
+    justify-items: center; 
+}
+
+.galeria-grid.una-columna img {
+    /* Ocupa un ancho máximo para que no se vea desproporcionada */
+    max-width: 80%; 
+}
+
+.galeria-grid img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.galeria-grid img:hover {
+    transform: scale(1.05);
+    z-index: 5;
+    box-shadow: 0 10px 20px var(--color-accent2);
+
+}
+
+/* ==============================
+   Laptops medianas y grandes
+   ============================== */
+@media (max-width: 1024px) {
+  .search-box input {
+    width: 300px;
+  }
+
+  .header-bottom {
+    padding: 0.5rem 3rem;
+  }
+}
+
+/* ==============================
+   Tablets medianas
+   ============================== */
+@media (max-width: 950px) {
+  .noticias-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .noticia-item img {
+    height: 160px;
+  }
+}
+
+/* ==============================
+   Tablets pequeñas
+   ============================== */
+@media (max-width: 900px) {
+  .noticias-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+}
+
+/* ==============================
+   Moviles - Header, carruseles, noticias
+   ============================== */
+
+@media (max-width: 768px) {
+  header,
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--color-header-bg);
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    height: auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid var(--color-accent);
+  }
+
+  /* --- FILA 1: Logo + nombre + iconos --- */
+  .header-top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .logo-header {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-left: 0.6rem;
+  }
+
+  .logo-header img {
+    width: 40px;
+    height: auto;
+  }
+
+  .logo-header h1 {
+    font-size: 1.1rem;
+  }
+
+  .nav-top ul {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    margin-right: 0.6rem;
+  }
+
+  .nav-top .button,
+  .nav-top .button1 {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* --- FILA 2: Barra de búsqueda --- */
+  .search-box {
+    width: 90%;
+    margin: 0.5rem auto;
+    display: flex;
+    justify-content: center;
+  }
+
+  .search-box input {
+    width: 100%;
+    border-radius: 1rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.85rem;
+  }
+
+  /* --- FILA 3: Botones morados --- */
+  .nav-top a {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 0.6rem;
+    display: inline-block;
+    margin: 0 0.2rem;
+  }
+
+  .nav-top .btn-row {
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 100%;
+    margin: 0.3rem 0;
+  }
+
+  /* --- MENÚ INFERIOR (azul) --- */
+  .header-bottom {
+    width: 100%;
+    background-color: #00e6ff; /* azul original */
+    padding: 0.5rem 0;
+  }
+
+  .header-bottom .nav-bottom ul {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    row-gap: 0.3rem;
+    margin: 0;
+    padding: 0;
+  }
+
+  .header-bottom .nav-bottom a {
+    color: #000;
+    font-weight: 600;
+    text-transform: capitalize;
+    font-size: 0.9rem;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE PARA SOBRE NOSOTROS
+   ===================================================== */
+
+@media (max-width: 950px) {
+    /* La cuadrícula cambia de 2 columnas a 1 columna */
+    .info-contacto-galeria {
+        grid-template-columns: 1fr;
+        gap: 4rem;
+    }
+    
+    /* Muestra el título GALERÍA en el layout de una sola columna */
+    .galeria-titulo-mobile {
+        display: block; 
+    }
+
+    /* Reduce el espacio entre las subsecciones de info */
+    .info-section {
+        gap: 1.5rem;
+    }
+
+    /* La sección de galería viene después de toda la info de la izquierda */
+    .galeria-section {
+        gap: 1.5rem;
+    }
+
+    .galeria-grid.dos-columnas {
+        gap: 1.5rem;
+    }
+
+    /* Asegurar que la imagen única siga centrada */
+    .galeria-grid.una-columna img {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 550px) {
+    /* Reducción general de padding y márgenes */
+    .contenedor-sobre-nosotros {
+        width: 95%;
+        margin: 2rem auto;
+    }
+
+    /* Las imágenes de la galería 2x2 se convierten en una sola columna */
+    .galeria-grid.dos-columnas {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Asegurar que las imágenes ocupen el ancho completo */
+    .equipo-principal img {
+        max-height: 200px;
+    }
+}
+
+
+/* =====================================================
+   🎬 TRANSICIÓN SUAVE
+   ===================================================== */
+header,
+.header,
+.search-box,
+.nav-top ul,
+.header-bottom {
+  transition: all 0.3s ease-in-out;
+}
+
+
+/*------------------------------------------------------------------------------------------------------*/
+
+
+/* =====================================================
+   Nuevo Modal de Publicación (Diseño tipo Streamer)
+   ===================================================== */
+
+/* Nuevo estilo para el título */
+.publi-title {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    /* Línea divisora sutil */
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: 0.5rem;
+}
+
+/* ANTES
+.modal-publi-grande {
+    
+    background: rgba(0, 0, 0, 0.9); 
+    
+}*/
+
+.modal-publi-grande {
+    /* Fondo semi-transparente más oscuro para destacarse */
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1010;
+}
+
+#modalNuevaPublicacion {
+    z-index: 1010; 
+}
+
+
+
+
+/*
+.modal-content-publi {
+    background-color: #2c2c2c; 
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 90%;
+    max-width: 950px; 
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+    position: relative;
+ 
+    animation: aparecer 0.4s ease-out;
+}*/
+
+
+.modal-content-publi {
+    background-color: var(--color-card-bg); 
+    border-radius: 1rem;
+    padding: 1rem;
+    width: 90%;
+    max-width: 950px; 
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+    position: relative;
+    animation: aparecer 0.4s ease-out;
+}
+
+/* Modificación de la X de cierre */
+.cerrar-publi {
+    position: absolute;
+    /* Mover más arriba */
+    top: 5px; 
+    /* Dar más espacio del borde derecho */
+    right: 20px;
+    font-size: 2rem;
+    /* Color morado solicitado */
+    color: var(--color-accent); 
+    cursor: pointer;
+    z-index: 1100; /* Asegura que la X esté siempre visible */
+    /* Sombra para que resalte más sobre el fondo */
+    text-shadow: 0 0 5px rgba(138, 43, 226, 0.5); 
+}
+.cerrar-publi:hover {
+    color: var(--color-accent2);
+}
+
+.publicacion-completa {
+    display: flex;
+    gap: 1.5rem;
+    height: 100%;
+}
+
+/* Columna de la Imagen (Izquierda) */
+.publi-imagen-completa {
+    flex: 1;
+    min-width: 45%;
+    max-width: 45%;
+    border-radius: 1rem;
+    overflow: hidden;
+    position: relative;
+}
+
+.publi-imagen-completa img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Columna del Contenido y Comentarios (Derecha) */
+.publi-contenido-completo {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0.5rem 0.5rem 0 0;
+}
+
+/* Ajuste al header para asegurar que el icono de chat no toque la X */
+.publi-header-completo {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    /* Aumentar el espacio a la derecha para evitar cruce con la X */
+    padding-right: 2.5rem; 
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-publi {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0; /* Evita que la imagen se comprima */
+}
+
+.info-usuario .usuario {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-accent);
+    display: block;
+    margin-bottom: 0.3rem;
+}
+
+.info-usuario p {
+    font-size: 0.95rem;
+    line-height: 1.4;
+    color: var(--color-text);
+}
+/*
+.icono-chat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    color: var(--color-text);
+    cursor: pointer;
+}*/
+
+.icono-chat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.5rem;
+    color: #888;
+    cursor: pointer;
+}
+
+
+/* Separador horizontal */
+.separador {
+    height: 1px;
+    background-color: var(--color-border);
+    margin: 0.5rem 0 1rem;
+}
+
+/* Estilo del segundo comentario (WhiteZombie) */
+.comentario-secundario {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-right: 2rem;
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+/*
+.comentario-secundario .acciones-publi {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: #888;
+}*/
+
+.comentario-secundario .acciones-publi {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 1rem;
+    font-size: 1.2rem;
+    color: #888; /* Gris sutil para corazón, marcador, etc. */
+}
+
+.acciones-publi i {
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.acciones-publi .fa-heart:hover {
+    color: #ff4040;
+}
+.acciones-publi .fa-bookmark:hover {
+    color: var(--color-link-hover);
+}
+
+/* Caja de Comentarios Inferior */
+.caja-comentario {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto; /* Empuja la caja al final del modal */
+    padding-top: 1rem;
+}
+
+/*
+.caja-comentario input {
+    flex-grow: 1;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: #333;
+    color: var(--color-text);
+    font-size: 0.9rem;
+}*/
+
+
+.caja-comentario input {
+    flex-grow: 1;
+    padding: 0.7rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #666; 
+    background-color: var(--color-header-bg); 
+
+    color: var(--color-text);
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.caja-comentario input:focus {
+    border-color: var(--color-accent); /* Borde morado al escribir */
+    box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.caja-comentario .btn-enviar {
+    background-color: var(--color-accent);
+    color: white;
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+}
+
+.caja-comentario .btn-enviar:hover {
+    background-color: var(--color-accent2);
+}
+
+/* Media Query para móvil: apilar imagen y contenido */
+@media (max-width: 768px) {
+    .publicacion-completa {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .publi-imagen-completa {
+        min-width: 100%;
+        max-width: 100%;
+        height: 250px;
+    }
+    .modal-content-publi {
+        padding: 1rem 0.5rem;
+    }
+    .caja-comentario {
+        flex-direction: column;
+    }
+    .caja-comentario input, .caja-comentario .btn-enviar {
+        width: 100%;
+    }
+}
+
+/* =====================================================
+   Nuevo Modal de "Añadir Publicación" (Robert)
+   ===================================================== */
+
+/* Aplicación general de la fuente principal (Roboto) */
+.modal-content-nueva-publi,
+.publi-form-columna input,
+.publi-form-columna textarea,
+.btn-upload-file {
+    font-family: var(--font-main);
+}
+
+/* Aplicación de la fuente de títulos (Anton) al nombre de usuario */
+.publi-form-username {
+    font-family: var(--font-titles); /* Aplicamos Anton aquí */
+    font-size: 1.2rem; /* Aumentamos el tamaño para que Anton se vea bien */
+    font-weight: 400; /* Anton es pesado por defecto */
+    color: var(--color-text);
+}
+
+/* Aplicación de la fuente de títulos (Anton) a las etiquetas grandes si es necesario */
+.publi-form-label {
+    font-family: var(--font-main); /* Mantenemos Roboto para las etiquetas pequeñas */
+}
+
+.modal-nueva-publi .modal-content-nueva-publi {
+    background-color: #222; /* Fondo del modal */
+    border-radius: 1rem;
+    padding: 0; /* Sin padding en el contenedor principal */
+    width: 90%;
+    max-width: 900px; /* Ancho deseado */
+    height: 600px; /* Altura fija para el grid */
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.8);
+    position: relative;
+    overflow: hidden;
+}
+
+.cerrar-publi-nueva {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    font-size: 2.5rem; /* Más grande */
+    color: var(--color-accent); /* Morado */
+    cursor: pointer;
+    z-index: 1100;
+    font-weight: 700;
+    line-height: 1;
+}
+
+/* Contenedor principal de 2 columnas */
+.publi-grid-container {
+    display: grid;
+    grid-template-columns: 35% 65%; /* 35% formulario, 65% arrastrar */
+    height: 100%;
+    position: relative;
+}
+
+/* --- Columna del Formulario (Izquierda) --- */
+/*
+.publi-form-columna {
+    background-color: #2c2c2c;
+    color: var(--color-text);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem; 
+    border-right: 1px solid #444;
+}*/
+/*
+.publi-form-columna {
+    
+    background-color: var(--color-card-bg); 
+    color: var(--color-text);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    
+    border-right: 1px solid var(--color-border); 
+}*/
+
+.publi-form-columna {
+   
+    background-color: var(--color-card-bg); 
+    color: var(--color-text);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    border-right: 1px solid var(--color-border); 
+}
+
+
+/* Y añade/modifica la sección de compartir */
+.publi-share-section {
+    /* Forzamos un margen superior para separarlo del último campo */
+    margin-top: 1.5rem; 
+    padding-top: 0.5rem; /* Reducimos el padding */
+    border-top: 1px solid #333;
+}
+
+.publi-header-form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #333;
+    margin-bottom: 0.5rem;
+}
+
+.publi-form-columna h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+.avatar-publi-form {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.publi-form-label {
+    font-size: 0.85rem;
+    color: #999;
+    margin-bottom: 0.2rem;
+    display: block;
+}
+
+.publi-form-username {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Grupos de formulario */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+/*
+.publi-form-columna input[type="text"],
+.publi-form-columna textarea {
+    background-color: #444; 
+    border: none;
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.5rem;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    outline: none;
+    transition: box-shadow 0.2s ease;
+}*/
+.publi-form-columna input[type="text"],
+.publi-form-columna textarea {
+   
+    background-color: var(--color-header-bg); 
+    border: 1px solid var(--color-border); 
+
+    padding: 0.6rem 0.8rem;
+    border-radius: 0.5rem;
+    color: var(--color-text);
+    font-size: 0.9rem;
+    outline: none;
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+
+
+.publi-form-columna input:focus,
+.publi-form-columna textarea:focus {
+    box-shadow: 0 0 0 2px var(--color-accent);
+}
+
+.publi-form-columna textarea {
+    height: 80px;
+    resize: none;
+}
+
+/* Sección de compartir en redes sociales (Corregido para usar IMAGENES) */
+.publi-share-section {
+    margin-top: auto; /* Empuja al final */
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+}
+
+.social-icons-publi {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 0.8rem;
+}
+
+/* Busca este bloque en tu CSS (debe estar en el que te envié anteriormente) */
+.social-icons-publi img {
+    /* Ajusta el tamaño de la imagen */
+    width: 50px; /* CAMBIADO: Antes 35px */
+    height: 50px; /* CAMBIADO: Antes 35px */
+    object-fit: contain; 
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    border-radius: 50%; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.social-icons-publi img:hover {
+    transform: scale(1.1);
+}
+
+/* --- Columna de Carga de Archivo (Derecha) --- */
+/*
+.publi-upload-columna {
+    background-color: #222; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}*/
+
+/* --- Columna de Carga de Archivo (Derecha) --- */
+.publi-upload-columna {
+   
+    background-color: var(--color-card-bg); 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.btn-upload-file {
+    background-color: var(--color-accent);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    box-shadow: 0 0 10px rgba(138, 43, 226, 0.4);
+}
+
+.btn-upload-file:hover {
+    background-color: var(--color-accent2);
+    transform: scale(1.05);
+}
+
+/* Responsive para que las columnas se apilen */
+@media (max-width: 768px) {
+    .modal-nueva-publi .modal-content-nueva-publi {
+        height: auto;
+    }
+    .publi-grid-container {
+        grid-template-columns: 1fr;
+    }
+    .publi-form-columna {
+        border-right: none;
+        border-bottom: 1px solid #444;
+    }
+    .publi-share-section {
+        margin-top: 1rem;
+        padding-top: 1rem;
+    }
+}
+
+/* =================================
+   NUEVOS ESTILOS PARA EDICIÓN DE FOTO DE PERFIL
+   ================================ */
+
+.perfil-info {
+    position: relative; /* Asegura que la posición absoluta del overlay funcione */
+   
+}
+
+.perfil-foto-container {
+    position: relative; /* Contenedor para posicionar el overlay */
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden; /* Oculta cualquier cosa que se salga del círculo */
+    cursor: pointer;
+}
+
+
+
+.perfil-editar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    /* Estilos iniciales (transparente y oculto) */
+    background: rgba(0, 0, 0, 0); 
+    color: transparent; 
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 10;
+}
+
+.perfil-editar-overlay i {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+
+.perfil-editar-overlay span {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* --- EFECTO HOVER --- */
+.perfil-foto-container:hover .perfil-editar-overlay {
+    background: rgba(0, 0, 0, 0.6);
+    color: white; 
+    opacity: 1;
+}
+
+.perfil-foto-container:hover .perfil-foto {
+    filter: brightness(0.8);
+}
+
+/* =====================================================
+    ESTILOS DE ACCESIBILIDAD (Lector de Pantalla)
+   ===================================================== */
+
+/* Modo de alto contraste */
+body.accessibility-mode {
+
+  --color-bg: #000;
+  --color-header-bg: #000;
+
+  --color-text: #fff;
+ 
+  --color-accent: #ff00ff;
+  --color-accent2: #ffff00; 
+  --color-card-bg: #111; 
+  --color-link-hover: #00ff00; 
+  --color-border: #888;
+}
+
+body.accessibility-mode * {
+  /* Eliminar efectos decorativos que distraen */
+  filter: none !important; 
+  box-shadow: none !important;
+  text-shadow: none !important;
+}
+
+/* Resaltar elementos activos y de enfoque */
+body.accessibility-mode button:focus,
+body.accessibility-mode a:focus,
+body.accessibility-mode input:focus {
+  outline: 3px solid var(--color-accent); /* Borde grueso y visible */
+  outline-offset: 2px;
+}
+
+
+/* =====================================================
+   RESPONSIVE (segun lo iba a poner todo en responsive.css y ya no se pudo yny)
+   ===================================================== */
+
+@media (max-width: 550px) {
+  
+  .perfil-usuario {
+    padding: 1rem;
+    box-shadow: 0 0 10px var(--color-shadow); 
+  }
+
+ 
+  .perfil-info {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem; /* Reduce el espacio vertical */
+  }
+
+  /* Reducir el tamaño de la foto y el contenedor del overlay */
+  .perfil-foto,
+  .perfil-foto-container {
+    width: 120px;
+    height: 120px;
+    border-width: 2px; 
+  }
+  
+  /* Ajustar el tamaño del icono y texto del overlay */
+  .perfil-editar-overlay i {
+    font-size: 1.8rem;
+  }
+  .perfil-editar-overlay span {
+    font-size: 0.8rem;
+  }
+
+  /* Ajustar los detalles del perfil */
+  .perfil-detalles {
+    text-align: center;
+  }
+
+  .perfil-nombre {
+    font-size: 1.4rem; /* Reducir el nombre de usuario */
+    margin-bottom: 0.5rem;
+  }
+
+  /* Ajustar las estadísticas para que se vean compactas */
+  .perfil-stats {
+    gap: 1.2rem;
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+
+  .perfil-stats p {
+    font-size: 1.1rem; /* Mantener los números grandes */
+  }
+
+  /* Botón de publicar */
+  .btn-publicar {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* --- Carrusel Vertical de Publicaciones --- */
+  #carrusel-vertical .carousel-container {
+    height: 450px; /* Reducir la altura visible del carrusel */
+  }
+
+  /* Tarjeta de publicación (pasa a ser vertical) */
+  #carrusel-vertical .publicacion-card {
+    flex-direction: column;
+    width: 100%;
+    padding: 0.8rem;
+  }
+  
+ 
+  #carrusel-vertical .publi-imagen {
+    width: 100%;
+    height: 180px; 
+  }
+
+  #carrusel-vertical .publi-imagen img {
+    height: 100%;
+  }
+
+ 
+  #carrusel-vertical .publi-contenido {
+    width: 100%;
+  }
+  
+  /* Títulos de la publicación */
+  #carrusel-vertical .publi-contenido h4 {
+    font-size: 1rem;
+  }
+
+  /* Comentarios dentro de la publicación */
+  #carrusel-vertical .comentario {
+    gap: 0.4rem;
+    margin-bottom: 0.4rem;
+  }
+
+  #carrusel-vertical .comentario .avatar {
+    width: 30px;
+    height: 30px;
+  }
+  
+  #carrusel-vertical .comentario .usuario,
+  #carrusel-vertical .comentario p {
+    font-size: 0.8rem;
+  }
+
+  /* Flechas del carrusel */
+  #carrusel-vertical .carousel-btn {
+    font-size: 1.3rem;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.btn-faq-flotante {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  
+  width: 55px;
+  height: 55px;
+
+  background-color: var(--color-boton-faq); 
+  color: white;
+  font-size: 32px;
+  font-weight: bold;
+
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+
+  cursor: pointer;
+  z-index: 9999;
+
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+.btn-faq-flotante:hover {
+  transform: scale(1.15);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.modal-equipo {
+  display: none; /* ahora sí desaparece */
+  position: fixed;
+  z-index: 1100;
+  inset: 0;
+  background: rgba(0,0,0,0.7);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-equipo-content {
+  background: var(--color-card-bg);
+  padding: 2rem;
+  border-radius: 15px;
+  width: 350px;
+  text-align: center;
+  box-shadow: 0 0 12px #000;
+  animation: aparecer 0.3s ease;
+}
+
+.modal-equipo .cerrar-modal-equipo {
+  float: right;
+  cursor: pointer;
+  color: var(--color-accent);
+  font-size: 1.5rem;
+}
+
+.equipo-bandera {
+  width: 150px;
+  height: 100px;
+  display: block;
+  margin: 0 auto 1.2rem auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.btn-mas-detalles {
+  margin-top: 1.2rem;
+  padding: 0.7rem 1.2rem;
+  background: var(--color-accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn-mas-detalles:hover {
+  background: var(--color-accent2);
+  transform: scale(1.05);
+}
+
+/* ================================
+   ESTILO PARA PÁGINA DE DETALLES
+================================ */
+
+.equipo-detalle {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border-radius: 15px;
+  background: var(--color-bg2);
+  color: var(--color-text);
+}
+
+.equipo-detalle h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+  color: var(--color-accent);
+}
+
+/* BANDERA PRINCIPAL */
+.bandera-detalle {
+  width: 600px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto 2rem auto;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+}
+
+/* CONTENEDOR DE INFO */
+.info-detalle {
+  padding: 1rem 0;
+}
+
+.info-detalle h2 {
+  font-size: 1.5rem;
+  margin-top: 1.5rem;
+  color: var(--color-accent);
+}
+
+.info-detalle p,
+.info-detalle li {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* LISTA DE PARTIDOS */
+.info-detalle ul {
+  margin-top: .5rem;
+  padding-left: 1.5rem;
+}
+
+.info-detalle ul li {
+  margin: .3rem 0;
+}
+
+
+.info-detalle h3{
+  color:#00e6ff
+
+}
+
+.info-detalle h4{
+  color:#00e6ff
+
+}
+
+.tarjetas-mundial {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1rem;
+  border-radius: 100 px;
+
+  /* Para que se acomoden en columna cuando sea celular */
+  flex-wrap: wrap;
+}
+
+
+.tarjeta-mundial {
+  background: var(--color-card-bg);
+  border-radius: 30px;       
+  width: 250px;              
+  height: 350px;             
+  overflow: hidden;          
+  cursor: pointer;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: .3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  padding: 30 px;
+}
+
+/* Imagen ajustada al contenedor */
+.tarjeta-mundial img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+/* Texto encima de la imagen */
+.tarjeta-mundial h3 {
+  position: relative;
+  z-index: 2;
+  padding: 1rem;
+  margin: 0;
+  color: var(--color-accent2);
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-shadow: 0 0 5px rgba(0,0,0,0.6);
+}
+
+
+.tarjeta-mundial:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 18px rgba(0,0,0,0.4);
+}
+
+
+@media (max-width: 768px) {
+  .tarjeta-mundial {
+    width: 85%;        
+    height: 380px;
+  }
+}
+
+#btnNuevaPublicacion .svg-icon path {
+  fill: var(--color-text);
+}
